@@ -1,0 +1,3 @@
+class Dealer < ApplicationRecord
+
+end

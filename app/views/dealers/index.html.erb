@@ -1,0 +1,11 @@
+<h1> All Dealers</h1>
+
+<% @dealers.each do |dealer| %>
+<%= dealer.name %><br>
+<%= dealer.city %>
+<%= "," + dealer.state %>
+<%= dealer.created_at %>
+<%= dealer.open %>
+<% end %>
+
+<h2><a href="/dealers/new">Add a Dealer</a></h2>

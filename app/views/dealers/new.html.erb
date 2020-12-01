@@ -1,0 +1,8 @@
+<form action="/dealers" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <p>Enter a new Dealer:</p>
+  <input type='text' name='dealer[name]'/><br/>
+  <textarea name='dealer[city]'></textarea><br/>
+  <textarea name='dealer[state]'></textarea><br/>
+  <input type='submit'/>
+</form>
