@@ -1,11 +1,32 @@
-<h1> All Dealers</h1>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <style>
+      table, th, td {
+        border: 1px solid black;
+        text-align: left;
+      }
 
+      th {
+        font-weight: 900;
+      }
+
+    </style>
+  </head>
+
+<body>
+  <h1 id="mainheader"> All Dealers</h1>
+<table style="  border: 1px solid black;">
+  <tr>
+    <th>Dealer Name</th>
+  </tr>
 <% @dealers.each do |dealer| %>
-<%= dealer.name %><br>
-<%= dealer.city %>
-<%= "," + dealer.state %>
-<%= dealer.created_at %>
-<%= dealer.open %>
+<tr>
+<td><a href="/dealers/<%= dealer.id %>"><%= dealer.name %></a></td>
+</tr>
 <% end %>
+</table>
 
 <h2><a href="/dealers/new">Add a Dealer</a></h2>
+</body>
+</html>

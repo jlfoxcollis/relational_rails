@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <style>
+      table, th, td {
+        border: 1px solid black;
+        text-align: left;
+      }
+
+      th {
+        font-weight: 900;
+      }
+    </style>
+  </head>
+
+  <body>
+    <a href="/dealers">Dealers Index</a>
+
+    <table style="  border: 1px solid black;">
+      <tr>
+        <th>Dealer Name</th>
+        <th>Location</th>
+        <th>Founded</th>
+        <th>Open?</th>
+      </tr>
+    <tr>
+    <td><%= @dealer.name %></td>
+    <td><%= @dealer.city + "," + @dealer.state %></td>
+    <td><%= @dealer.created_at %></td>
+    <td><%= @dealer.open %></td>
+    </tr>
+    </table>
+  </body>
+</html>

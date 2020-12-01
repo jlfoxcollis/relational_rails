@@ -10,11 +10,16 @@ class DealersController < ApplicationController
     dealer = Dealer.new({
       name: params[:dealer][:name],
       city: params[:dealer][:city],
-      state: params[:dealer][:state]
+      state: params[:dealer][:state],
+      open: params[:dealer][:open]
     })
 
     dealer.save
 
     redirect_to '/dealers'
+  end
+
+  def show
+    @dealer = Dealer.find(params[:id])
   end
 end
