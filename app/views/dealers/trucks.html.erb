@@ -1,0 +1,9 @@
+<a href="/dealers/<%= @dealer.id %>"> Dealer Page</a><br/>
+
+<% @trucks.each do |truck| %>
+<% if truck.dealer_id == @dealer.id %>
+<%= truck.year %>
+<%= truck.make %>
+<%= truck.model %>
+<% end %>
+<% end %>
