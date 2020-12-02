@@ -14,8 +14,13 @@ Rails.application.routes.draw do
 
   #Roads Parent
 
+  get '/roads', to: 'roads#index'
+  get '/roads/new', to: 'roads#new'
+  get '/roads/:id', to: 'roads#show'
+  post '/roads', to: 'roads#create'
 
 
+  # Trucks Child
   get '/trucks', to: 'trucks#index'
   get '/trucks/new', to: 'trucks#new'
   post '/trucks', to: 'trucks#create'

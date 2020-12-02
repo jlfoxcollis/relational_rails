@@ -1,0 +1,18 @@
+<form action="/roads" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <p>Enter a new Road:</p>
+  <input type='text' name='road[name]'/><br/>
+  <p>Lanes:</p>
+  <input type='integer' name='road[lanes]'/><br/>
+  <h3>Open?</h3>
+  <input type="radio" id="yes" name='road[open?]' value="true"/>
+  <label for="yes">yes</label><br/>
+  <input type="radio" id="no" name='road[open?]' value="false"/>
+  <label for="no">no</label><br/>
+    <h3>Has Parking?</h3>
+  <input type="radio" id="yes" name='road[parking?]' value="true"/>
+  <label for="yes">yes</label><br/>
+  <input type="radio" id="no" name='road[parking?]' value="false"/>
+  <label for="no">no</label><br/>
+  <input type='submit'/>
+</form>
