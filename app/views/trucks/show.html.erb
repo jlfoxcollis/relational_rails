@@ -1,0 +1,29 @@
+<head>
+  <style>
+    table, th, td {
+      border: 1px solid black;
+      text-align: left;
+      padding: 5px;
+    }
+
+    th {
+      font-weight: 900;
+    }
+  </style>
+</head>
+<table>
+  <tr>
+    <th>Year</th>
+    <th>Make</th>
+    <th>Model</th>
+    <th>Dealer ID</th>
+    <th>Dealer Name</th>
+  </tr>
+  <tr>
+    <td><%= @truck.year %></td>
+    <td><%= @truck.make %></td>
+    <td><%= @truck.model %></td>
+    <td><%= @truck.dealer_id %></td>
+    <td><% dealer = Dealer.find(@truck.dealer_id) %><%= dealer.name %></td>
+  </tr>
+</table>

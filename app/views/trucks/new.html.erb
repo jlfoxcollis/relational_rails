@@ -1,0 +1,14 @@
+
+<form action="/trucks" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <p>Enter a new Truck:</p>
+  <label for="year">Year:</label><br>
+  <input type='text' id="year" name='truck[year]'/><br/>
+  <label for="make">Make:</label><br>
+  <textarea name='truck[make]' id="make"></textarea><br/>
+  <label for="model">Model:</label><br>
+  <textarea name='truck[model]' id="model"></textarea><br/>
+  <label for="dealer_id">Dealer ID:</label><br>
+  <input type='text' id="dealer_id" name='truck[dealer_id]'/><br/>
+  <input type='submit'/>
+</form>
