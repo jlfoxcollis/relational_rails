@@ -17,7 +17,10 @@ Rails.application.routes.draw do
   get '/roads', to: 'roads#index'
   get '/roads/new', to: 'roads#new'
   get '/roads/:id', to: 'roads#show'
+  get '/roads/:id/edit', to: 'roads#edit'
   post '/roads', to: 'roads#create'
+  patch '/roads/:id', to: 'roads#update'
+  delete '/roads/:id', to: 'roads#destroy'
 
 
   # Trucks Child
