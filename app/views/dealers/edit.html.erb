@@ -1,0 +1,14 @@
+<form action="/dealers/<%= @dealer.id %>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="hidden" name="_method" value="PATCH" />
+  <p>Edit</p>
+  <input type='text' name='dealer[name]' value="<%= @dealer.name %>"/><br/>
+  <textarea name='dealer[city]'><%= @dealer.city %></textarea><br/>
+  <textarea name='dealer[state]'><%= @dealer.state %></textarea><br/>
+  <h3>Open?</h3>
+  <input type="radio" id="yes" name='dealer[open]' value="true"/>
+  <label for="yes">yes</label><br/>
+  <input type="radio" id="no" name='dealer[open]' value="false"/>
+  <label for="no">no</label><br/>
+  <input type='submit'/>
+</form>

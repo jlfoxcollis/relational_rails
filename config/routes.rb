@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   get '/dealers/new', to: 'dealers#new'
   post '/dealers', to: 'dealers#create'
   get '/dealers/:id', to: 'dealers#show'
+  get '/dealers/:id/edit', to: 'dealers#edit'
+  patch '/dealers/:id', to: 'dealers#update'
 end

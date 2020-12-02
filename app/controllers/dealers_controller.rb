@@ -22,4 +22,19 @@ class DealersController < ApplicationController
   def show
     @dealer = Dealer.find(params[:id])
   end
+
+  def edit
+    @dealer = Dealer.find(params[:id])
+  end
+
+  def update
+    dealer = Dealer.find(params[:id])
+    dealer.update({
+      name: params[:dealer][:name],
+      city: params[:dealer][:city],
+      state: params[:dealer][:state],
+      open: params[:dealer][:open]
+    })
+    redirect_to "/dealers/#{dealer.id}"
+  end
 end
