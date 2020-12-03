@@ -11,6 +11,8 @@
     }
   </style>
 </head>
+<body>
+  <a href="/dealers/<%= params[:id] %>/trucks/<%= @truck.id %>/edit">Edit Truck</a>
 <table>
   <tr>
     <th>Year</th>
@@ -27,3 +29,4 @@
     <td><% dealer = Dealer.find(@truck.dealer_id) %><%= dealer.name %></td>
   </tr>
 </table>
+</body>

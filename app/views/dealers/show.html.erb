@@ -41,11 +41,7 @@ li a:hover {
       <li><a href="/dealers">Dealers Index</a></li>
       <li><a href="/dealers/<%= @dealer.id %>/trucks">Trucks</a></li>
       <li><a href="/dealers/<%= @dealer.id %>/edit">Edit</a></li>
-      <li><form action="/dealers/<%= @dealer.id %>" method="POST">
-        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-        <input type="hidden" name="_method" value="DELETE">
-        <input type="submit" style="background:none;border:none;font-size:1.2em;font-family:'Times New Roman';text-decoration:underline;" value="delete dealer"/>
-      </form></li>
+      <li><a data-method="delete" href="/dealers/<%= @dealer.id %>"> Delete</a></li>
     </ul><br/>
 
     <table>
