@@ -1,10 +1,38 @@
-<a href="/dealers/<%= @dealer.id %>"> Dealer Page</a><br/>
-<a href="/dealers/<%= @dealer.id %>/trucks/new/?dealer_id=<%= @dealer.id %>">Adopt A Truck</a><br/>
+<html>
+<head>
+  <style>
+    table, th, td {
+      border: 1px solid black;
+      text-align: left;
+      padding: 5px;
+    }
 
-<% @trucks.each do |truck| %>
-<% if truck.dealer_id == @dealer.id %>
-<%= truck.year %>
-<%= truck.make %>
-<%= truck.model %>
-<% end %>
-<% end %>
+    th {
+      font-weight: 900;
+    }
+  </style>
+</head>
+<body>
+  <a href="/dealers/<%= @dealer.id %>"> Dealer Page</a><br/>
+  <a href="/dealers/<%= @dealer.id %>/trucks/new/?dealer_id=<%= @dealer.id %>">Adopt A Truck</a><br/>
+<table>
+  <tr>
+    <th>Year</th>
+    <th>Make</th>
+    <th>Model</th>
+    <th>Dealer ID</th>
+  </tr>
+    <% @trucks.each do |truck| %>
+    <% if truck.dealer_id == @dealer.id %>
+    <tr>
+      <td><%= truck.year %></td>
+      <td><%= truck.make %></td>
+      <td><%= truck.model %></td>
+      <td><%= truck.dealer_id %></td>
+
+    </tr>
+    <% end %>
+    <% end %>
+  </table>
+</body>
+</html>

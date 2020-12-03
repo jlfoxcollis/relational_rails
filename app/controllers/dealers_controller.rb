@@ -8,10 +8,10 @@ class DealersController < ApplicationController
 
   def create
     dealer = Dealer.new({
-      name: params[:dealer][:name],
-      city: params[:dealer][:city],
-      state: params[:dealer][:state],
-      open: params[:dealer][:open]
+      name: params[:name],
+      city: params[:city],
+      state: params[:state],
+      open: params[:open]
     })
 
     dealer.save

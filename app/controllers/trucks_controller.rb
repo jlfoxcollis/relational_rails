@@ -14,7 +14,6 @@ class TrucksController < ApplicationController
       model: params[:model],
       dealer_id: params[:dealer_id]
     })
-    binding.pry
 
     truck.save
 
@@ -37,7 +36,6 @@ class TrucksController < ApplicationController
       model: params[:model],
       dealer_id: params[:dealer_id]
     })
-    binding.pry
     redirect_to "/dealers/#{truck.dealer_id}/trucks/#{truck.id}"
   end
 
