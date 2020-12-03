@@ -40,4 +40,9 @@ class TrucksController < ApplicationController
     binding.pry
     redirect_to "/dealers/#{truck.dealer_id}/trucks/#{truck.id}"
   end
+
+  def destroy
+    Truck.destroy(params[:id])
+    redirect_to "/trucks"
+  end
 end

@@ -13,6 +13,8 @@
 </head>
 <body>
   <a href="/dealers/<%= params[:id] %>/trucks/<%= @truck.id %>/edit">Edit Truck</a>
+  <a data-method="delete" href="/trucks/<%= @truck.id %>"> Delete</a>
+
 <table>
   <tr>
     <th>Year</th>
