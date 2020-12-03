@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <style>
+      table, th, td {
+        border: 1px solid black;
+        text-align: left;
+      }
+
+      th {
+        font-weight: 900;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <a href="/">Home Page</a>
+    <h2>Welcome to the Trucks Collective Inventory Page</h2>
+    <table>
+      <tr>
+        <th>Year</th>
+        <th>Make</th>
+        <th>Model</th>
+        <th>Dealer ID</th>
+      </tr>
+    <% @trucks.each do |truck| %>
+      <tr>
+        <td><%= truck.year %></td>
+        <td><%= truck.make %></td>
+        <td><%= truck.model %></td>
+        <td><%= truck.dealer_id %></td>
+      <tr>
+    <% end %>
+  </table>
+  </body>
+<html>

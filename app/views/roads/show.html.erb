@@ -1,0 +1,8 @@
+<a href='/roads'>Back</a>
+<h1><%= @road.name%></h1>
+<ul class="navbar">
+  <li><a href='/roads/<%= @road.id %>/edit'>EDIT</a></li>
+  <li><a data-method="delete" href='/roads/<%= @road.id %>'>DELETE</a></li>
+</ul>
+<h2>Lanes: <%= @road.lanes%></h2>
+<%= @road.open?%>
