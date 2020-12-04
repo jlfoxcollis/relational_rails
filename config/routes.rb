@@ -24,6 +24,10 @@ Rails.application.routes.draw do
   # Cars Child Roads Parent
 
   get '/cars', to: 'cars#index'
+  get '/roads/:id/cars', to: 'cars#parent_index'
+  get '/cars/:id', to: 'cars#show'
+  get '/roads/:id/cars/new', to: 'cars#new'
+  post '/roads/:id/cars/new', to: 'cars#create'
 
   # Trucks Child Dealer Parent
   get '/dealers/:id/trucks/new', to: 'trucks#new'

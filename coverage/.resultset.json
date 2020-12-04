@@ -266,6 +266,10 @@
           null,
           null,
           1,
+          1,
+          1,
+          1,
+          1,
           null,
           null,
           1,
@@ -282,6 +286,66 @@
       "/Users/magicmax/turing/mod2/relational_rails/app/helpers/application_helper.rb": {
         "lines": [
           1,
+          null
+        ]
+      },
+      "/Users/magicmax/turing/mod2/relational_rails/spec/features/cars/new_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/magicmax/turing/mod2/relational_rails/spec/features/cars/road_cars_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/magicmax/turing/mod2/relational_rails/spec/features/cars/show_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
           null
         ]
       },
@@ -411,6 +475,30 @@
           1,
           1,
           null,
+          null,
+          1,
+          2,
+          2,
+          5,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
           null
         ]
       },
@@ -469,6 +557,6 @@
         ]
       }
     },
-    "timestamp": 1607050275
+    "timestamp": 1607055053
   }
 }
