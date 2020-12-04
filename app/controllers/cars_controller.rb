@@ -4,10 +4,7 @@ class CarsController < ApplicationController
   end
 
   def parent_index
-    @cars = Car.all
-    @cars = @cars.select do |car|
-      car.road.id.to_s == params[:id]
-    end
+    @cars = Car.where(road_id: params[:id])
   end
   
   def show
