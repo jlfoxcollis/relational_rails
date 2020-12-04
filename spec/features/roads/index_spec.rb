@@ -31,4 +31,14 @@ describe 'Roads index page', type: :feature do
 
     expect(page).to have_content("THIS IS A ROAD")
   end
+
+  # Alt of lines 20-32
+  scenario 'creating a road' do
+    visit '/roads'
+    click_link 'Create a Road'
+    fill_in 'road[name]', with: 'ROAD 1'
+    expect{
+      click_button 'submit'
+    }.to change(Road, :count).by(1)
+  end
 end
