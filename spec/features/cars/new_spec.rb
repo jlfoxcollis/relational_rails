@@ -16,4 +16,14 @@ describe 'Can make a new car', type: :feature do
     expect(current_path).to eq("/roads/#{mini.road.id}/cars")
     expect(page).to have_content("Herbert")
   end
+
+  it 'Catches unnamed Car' do
+    main1 = Road.create!(name: "Main Street", lanes: 2, parking?: true, open?: false)
+
+    visit "roads/#{main1.id}/cars/new"
+
+    click_button 'create'
+
+    expect(current_path).to eq("/roads/#{main1.id}/cars/new")
+  end
 end

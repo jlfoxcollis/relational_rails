@@ -28,6 +28,9 @@ Rails.application.routes.draw do
   get '/cars/:id', to: 'cars#show'
   get '/roads/:id/cars/new', to: 'cars#new'
   post '/roads/:id/cars/new', to: 'cars#create'
+  get '/cars/:id/edit', to: 'cars#edit'
+  post '/cars/:id/edit', to: 'cars#update'
+  delete '/cars/:id', to: 'cars#destroy'
 
   # Trucks Child Dealer Parent
   get '/dealers/:id/trucks/new', to: 'trucks#new'

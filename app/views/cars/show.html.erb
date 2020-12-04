@@ -2,4 +2,8 @@
 <p><%= @car.name %></p>
 <p><%= @car.driving?%></p>
 <p><%= @car.parked?%></p>
-<h2>Is currently in: <%= @car.road.name%>
+<h2>Is currently in: <h4><a href="/roads/<%= @car.road.id %>/cars"><%= @car.road.name%></a><h4></h2>
+<h4><a href="/cars/<%= @car.id %>/edit">edit</a></h4>
+<h4><a data-method='delete' href="/cars/<%= @car.id %>">delete</a></h4>
+<h4><a href="/cars">Car Index</a><h4>
+
