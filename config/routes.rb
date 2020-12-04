@@ -21,6 +21,9 @@ Rails.application.routes.draw do
   patch '/roads/:id', to: 'roads#update'
   delete '/roads/:id', to: 'roads#destroy'
 
+  # Cars Child Roads Parent
+
+  get '/cars', to: 'cars#index'
 
   # Trucks Child Dealer Parent
   get '/dealers/:id/trucks/new', to: 'trucks#new'

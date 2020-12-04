@@ -266,6 +266,9 @@
           null,
           null,
           1,
+          null,
+          null,
+          1,
           1,
           1,
           1,
@@ -279,6 +282,54 @@
       "/Users/magicmax/turing/mod2/relational_rails/app/helpers/application_helper.rb": {
         "lines": [
           1,
+          null
+        ]
+      },
+      "/Users/magicmax/turing/mod2/relational_rails/spec/features/roads/index_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
           null
         ]
       },
@@ -336,12 +387,35 @@
       "/Users/magicmax/turing/mod2/relational_rails/app/models/road.rb": {
         "lines": [
           1,
+          1,
           null
         ]
       },
       "/Users/magicmax/turing/mod2/relational_rails/app/models/application_record.rb": {
         "lines": [
           1,
+          1,
+          null
+        ]
+      },
+      "/Users/magicmax/turing/mod2/relational_rails/app/models/car.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/magicmax/turing/mod2/relational_rails/app/controllers/cars_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/magicmax/turing/mod2/relational_rails/app/controllers/application_controller.rb": {
+        "lines": [
           1,
           null
         ]
@@ -393,14 +467,8 @@
           null,
           null
         ]
-      },
-      "/Users/magicmax/turing/mod2/relational_rails/app/controllers/application_controller.rb": {
-        "lines": [
-          1,
-          null
-        ]
       }
     },
-    "timestamp": 1607040285
+    "timestamp": 1607050275
   }
 }
