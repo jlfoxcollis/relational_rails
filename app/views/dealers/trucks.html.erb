@@ -23,7 +23,6 @@
     <th>Dealer ID</th>
   </tr>
     <% @trucks.each do |truck| %>
-    <% if truck.dealer_id == @dealer.id %>
     <tr>
       <td><%= truck.year %></td>
       <td><%= truck.make %></td>
@@ -31,7 +30,6 @@
       <td><%= truck.dealer_id %></td>
 
     </tr>
-    <% end %>
     <% end %>
   </table>
 </body>
