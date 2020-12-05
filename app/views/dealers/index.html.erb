@@ -20,10 +20,12 @@
 <table style="  border: 1px solid black;">
   <tr>
     <th>Dealer Name</th>
+    <th>Creation Date</th>
   </tr>
 <% @dealers.each do |dealer| %>
 <tr>
 <td><a href="/dealers/<%= dealer.id %>"><%= dealer.name %></a></td>
+<td><%= dealer.time_format %></td>
 </tr>
 <% end %>
 </table>

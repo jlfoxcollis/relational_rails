@@ -15,6 +15,7 @@
 <body>
   <a href="/dealers/<%= @dealer.id %>"> Dealer Page</a><br/>
   <a href="/dealers/<%= @dealer.id %>/trucks/new/?dealer_id=<%= @dealer.id %>">Adopt A Truck</a><br/>
+  <h2>Number of Trucks: <%= @dealer.trucks_count %></h2>
 <table>
   <tr>
     <th>Year</th>
@@ -23,7 +24,6 @@
     <th>Dealer ID</th>
   </tr>
     <% @trucks.each do |truck| %>
-    <% if truck.dealer_id == @dealer.id %>
     <tr>
       <td><%= truck.year %></td>
       <td><%= truck.make %></td>
@@ -31,7 +31,6 @@
       <td><%= truck.dealer_id %></td>
 
     </tr>
-    <% end %>
     <% end %>
   </table>
 </body>

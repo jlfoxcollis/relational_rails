@@ -1,0 +1,6 @@
+<h1>Cars:</h1>
+<% @cars.each do |car| %>
+<p><a href='/cars/<%= car.id %>'><%= car.name %></a></p>
+<p><%= car.driving?%></p>
+<p><%= car.parked?%></p>
+<% end%>

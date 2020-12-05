@@ -9,7 +9,6 @@ Rails.application.routes.draw do
   get '/dealers/:id/edit', to: 'dealers#edit'
   post '/dealers/:id/edit', to: 'dealers#update'
   delete '/dealers/:id', to: 'dealers#destroy'
-  get '/dealers/:id/trucks', to: 'dealers#trucks'
 
   #Roads Parent
 
@@ -21,14 +20,26 @@ Rails.application.routes.draw do
   patch '/roads/:id', to: 'roads#update'
   delete '/roads/:id', to: 'roads#destroy'
 
+  # Cars Child Roads Parent
+
+  get '/cars', to: 'cars#index'
+  get '/roads/:id/cars', to: 'cars#parent_index'
+  get '/cars/:id', to: 'cars#show'
+  get '/roads/:id/cars/new', to: 'cars#new'
+  post '/roads/:id/cars/new', to: 'cars#create'
+  get '/cars/:id/edit', to: 'cars#edit'
+  post '/cars/:id/edit', to: 'cars#update'
+  delete '/cars/:id', to: 'cars#destroy'
 
   # Trucks Child Dealer Parent
-  get '/dealers/:id/trucks/new', to: 'trucks#new'
   get '/trucks', to: 'trucks#index'
+  get '/dealers/:id/trucks', to: 'dealers#trucks'
   get '/trucks/:id', to: 'trucks#show'
-  get '/dealers/:id/trucks/:id', to: 'trucks#show'
+  get '/dealers/:id/trucks/new', to: 'trucks#new'
   post '/dealers/:id/trucks/new', to: 'trucks#create'
-  get '/dealers/:id/trucks/:id/edit', to: 'trucks#edit'
+  get '/trucks/:id/edit', to: 'trucks#edit'
+  get '/dealers/:id/trucks/:id', to: 'trucks#show'
   post '/dealers/:id/trucks/:id/edit', to: 'trucks#update'
+  get '/dealers/:id/trucks/:id/edit', to: 'trucks#edit'
   delete '/trucks/:id', to: 'trucks#destroy'
 end

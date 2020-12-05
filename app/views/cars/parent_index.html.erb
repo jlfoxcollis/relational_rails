@@ -1,0 +1,7 @@
+<h1>Cars:</h1>
+<% @cars.each do |car| %>
+<p><a href='/cars/<%= car.id %>'><%= car.name %></a></p>
+<p><%= car.driving?%></p>
+<p><%= car.parked?%></p>
+<% end%>
+<h3><a href="/roads/<%= @cars.first.road.id %>/cars/new">Adopt Car</a></h3>
