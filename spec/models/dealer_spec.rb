@@ -40,5 +40,15 @@ RSpec.describe Dealer, type: :model do
         expect(bradley_ford.time_format).to eq("11/05/1909")
       end
     end
+
+    describe '#trucks_count' do
+      it 'can count' do
+        medved = Dealer.create!(name: "Medved", city: "Denver", state: "CO", open: true)
+        bradley_ford = Dealer.create!(name: "Bradley Ford", city: "LHC", state: "CO", open: true)
+        medved.trucks.create!(year: 1999, model: "F150", make: "Ford")
+
+        expect(medved.trucks_count).to eq(1)
+      end
+    end
   end
 end

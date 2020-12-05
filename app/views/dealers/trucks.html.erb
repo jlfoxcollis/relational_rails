@@ -15,6 +15,7 @@
 <body>
   <a href="/dealers/<%= @dealer.id %>"> Dealer Page</a><br/>
   <a href="/dealers/<%= @dealer.id %>/trucks/new/?dealer_id=<%= @dealer.id %>">Adopt A Truck</a><br/>
+  <h2>Number of Trucks: <%= @dealer.trucks_count %></h2>
 <table>
   <tr>
     <th>Year</th>

@@ -27,4 +27,14 @@ RSpec.describe "Dealer index display", type: :feature do
     expect(current_path).to eq('/dealers')
     expect(page).to have_content("Bradley Ford")
   end
+
+  it 'can count' do
+    medved = Dealer.create!(name: "Medved", city: "Denver", state: "CO", open: true)
+    bradley_ford = Dealer.create!(name: "Bradley Ford", city: "LHC", state: "CO", open: true)
+    medved.trucks.create!(year: 1999, model: "F150", make: "Ford")
+
+    visit "/dealers/#{medved.id}/trucks"
+
+    expect(page).to have_content("Number of Trucks: #{medved.trucks_count}")
+  end
 end

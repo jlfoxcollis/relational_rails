@@ -13,4 +13,8 @@ class Dealer < ApplicationRecord
   def time_format
     created_at.strftime('%m/%d/%Y')
   end
+
+  def trucks_count
+    trucks.count
+  end
 end
