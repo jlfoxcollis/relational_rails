@@ -9,7 +9,6 @@ Rails.application.routes.draw do
   get '/dealers/:id/edit', to: 'dealers#edit'
   post '/dealers/:id/edit', to: 'dealers#update'
   delete '/dealers/:id', to: 'dealers#destroy'
-  get '/dealers/:id/trucks', to: 'dealers#trucks'
 
   #Roads Parent
 
@@ -33,12 +32,14 @@ Rails.application.routes.draw do
   delete '/cars/:id', to: 'cars#destroy'
 
   # Trucks Child Dealer Parent
-  get '/dealers/:id/trucks/new', to: 'trucks#new'
   get '/trucks', to: 'trucks#index'
+  get '/dealers/:id/trucks', to: 'dealers#trucks'
   get '/trucks/:id', to: 'trucks#show'
-  get '/dealers/:id/trucks/:id', to: 'trucks#show'
+  get '/dealers/:id/trucks/new', to: 'trucks#new'
   post '/dealers/:id/trucks/new', to: 'trucks#create'
-  get '/dealers/:id/trucks/:id/edit', to: 'trucks#edit'
+  get '/trucks/:id/edit', to: 'trucks#edit'
+  get '/dealers/:id/trucks/:id', to: 'trucks#show'
   post '/dealers/:id/trucks/:id/edit', to: 'trucks#update'
+  get '/dealers/:id/trucks/:id/edit', to: 'trucks#edit'
   delete '/trucks/:id', to: 'trucks#destroy'
 end

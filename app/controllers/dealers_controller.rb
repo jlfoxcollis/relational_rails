@@ -1,6 +1,6 @@
 class DealersController < ApplicationController
   def index
-    @dealers = Dealer.all
+    @dealers = Dealer.date_time_sort
   end
 
   def new
@@ -34,6 +34,7 @@ class DealersController < ApplicationController
 
   def update
     dealer = Dealer.find(params[:id])
+    dealer.update_column(:updated_at, Time.now)
     dealer.update({
       name: params[:name],
       city: params[:city],

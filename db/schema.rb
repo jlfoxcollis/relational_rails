@@ -44,7 +44,10 @@ ActiveRecord::Schema.define(version: 2020_12_04_024159) do
     t.integer "year"
     t.string "make"
     t.string "model"
+    t.integer "dealer_id"
+    t.index ["dealer_id"], name: "index_trucks_at_dealer_id"
   end
 
   add_foreign_key "cars", "roads"
+  add_foreign_key "trucks", "dealers", name: "trucks_dealer_id_fkey"
 end
