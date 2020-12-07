@@ -1,6 +1,6 @@
+
 require 'Time'
 require 'date'
-
 require 'rails_helper'
 
 RSpec.describe Dealer, type: :model do

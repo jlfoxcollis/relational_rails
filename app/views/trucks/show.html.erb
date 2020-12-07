@@ -15,7 +15,7 @@
   <a href="/trucks">Trucks Index</a>
   <a href="/dealers/<%= @truck.dealer_id %>">Dealer Page</a>
   <a href="/trucks/<%= @truck.id %>/edit">Edit Truck</a>
-  <%= link_to 'Delete', "/trucks/ @truck.id ", method: :delete %>
+  <%= link_to 'Delete', "/trucks/#{@truck.id} ", method: :delete %>
 <table>
   <tr>
     <th>Year</th>

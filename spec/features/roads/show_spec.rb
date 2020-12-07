@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'Roads show page', type: :feature do
-  
+
   it 'Can Display Info' do
     main = Road.create!(name: "Main Street", lanes: 2, parking?: true, open?: false)
 

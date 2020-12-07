@@ -1,3 +1,4 @@
+
 require 'rails_helper'
 
 RSpec.describe 'Test the Monster Trucks!', type: :feature do

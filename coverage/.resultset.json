@@ -43,6 +43,8 @@
           null,
           null,
           1,
+          1,
+          null,
           null,
           null
         ]
@@ -238,6 +240,31 @@
           null
         ]
       },
+      "/Users/james/turing/mod2/relational_rails/spec/factories/dealers.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null
+        ]
+      },
       "/Users/james/turing/mod2/relational_rails/config/routes.rb": {
         "lines": [
           1,
@@ -300,6 +327,7 @@
       "/Users/james/turing/mod2/relational_rails/spec/features/cars/edit_spec.rb": {
         "lines": [
           1,
+          1,
           null,
           1,
           1,
@@ -341,6 +369,7 @@
       "/Users/james/turing/mod2/relational_rails/spec/features/cars/index_spec.rb": {
         "lines": [
           1,
+          1,
           null,
           1,
           null,
@@ -359,6 +388,7 @@
       },
       "/Users/james/turing/mod2/relational_rails/spec/features/cars/new_spec.rb": {
         "lines": [
+          1,
           1,
           null,
           1,
@@ -393,6 +423,7 @@
       "/Users/james/turing/mod2/relational_rails/spec/features/cars/road_cars_spec.rb": {
         "lines": [
           1,
+          1,
           null,
           1,
           null,
@@ -412,6 +443,7 @@
       "/Users/james/turing/mod2/relational_rails/spec/features/cars/show_spec.rb": {
         "lines": [
           1,
+          1,
           null,
           1,
           null,
@@ -429,6 +461,7 @@
       },
       "/Users/james/turing/mod2/relational_rails/spec/features/dealers/index_spec.rb": {
         "lines": [
+          1,
           1,
           null,
           1,
@@ -474,6 +507,7 @@
       "/Users/james/turing/mod2/relational_rails/spec/features/dealers/show_spec.rb": {
         "lines": [
           1,
+          1,
           null,
           1,
           1,
@@ -518,6 +552,7 @@
       },
       "/Users/james/turing/mod2/relational_rails/spec/features/roads/index_spec.rb": {
         "lines": [
+          1,
           1,
           null,
           1,
@@ -566,6 +601,7 @@
       },
       "/Users/james/turing/mod2/relational_rails/spec/features/roads/show_spec.rb": {
         "lines": [
+          1,
           1,
           null,
           1,
@@ -620,6 +656,8 @@
           1,
           null,
           1,
+          null,
+          1,
           1,
           1,
           1,
@@ -640,6 +678,8 @@
       },
       "/Users/james/turing/mod2/relational_rails/spec/features/trucks/index_spec.rb": {
         "lines": [
+          1,
+          null,
           1,
           null,
           1,
@@ -687,6 +727,8 @@
           1,
           null,
           1,
+          null,
+          1,
           1,
           1,
           1,
@@ -701,8 +743,9 @@
       "/Users/james/turing/mod2/relational_rails/spec/models/dealer_spec.rb": {
         "lines": [
           1,
-          1,
           null,
+          1,
+          1,
           1,
           null,
           1,
@@ -798,6 +841,7 @@
       },
       "/Users/james/turing/mod2/relational_rails/spec/models/truck_spec.rb": {
         "lines": [
+          1,
           1,
           1,
           null,
@@ -1060,6 +1104,6 @@
         ]
       }
     },
-    "timestamp": 1607352514
+    "timestamp": 1607356758
   }
 }

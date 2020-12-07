@@ -1,3 +1,4 @@
+
 require 'rails_helper'
 
 RSpec.describe 'truck edit form', type: :feature do
@@ -13,7 +14,7 @@ RSpec.describe 'truck edit form', type: :feature do
 
     click_button 'patch'
 
-    expect(current_path).to eq("/dealers/#{medved.id}/trucks/#{medved.trucks.first.id}")
+    expect(current_path).to eq("/trucks/#{medved.trucks.first.id}")
     expect(page).to have_content("Chevy")
     end
   end

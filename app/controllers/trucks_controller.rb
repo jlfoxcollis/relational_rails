@@ -40,7 +40,7 @@ class TrucksController < ApplicationController
       model: params[:model],
       dealer_id: params[:dealer_id]
     })
-    redirect_to "/dealers/#{truck.dealer_id}/trucks/#{truck.id}"
+    redirect_to "/trucks/#{truck.id}"
   end
 
   def destroy

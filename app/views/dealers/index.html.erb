@@ -36,7 +36,7 @@
 <td><a href="/dealers/<%= dealer.id %>"><%= dealer.name %></a></td>
 <td><%= dealer.time_format %></td>
 <td><a href="/dealers/<%= dealer.id %>/edit">Edit</a></td>
-<td><a href="/dealers/<%= dealer.id %>/delete">Delete</a></td>
+<td><%= link_to 'Delete', "/dealers/#{dealer.id}", method: :delete %></td>
 </tr>
 <% end %>
 </table>

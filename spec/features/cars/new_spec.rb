@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'Can make a new car', type: :feature do
-  
+
   it 'Form something' do
     main1 = Road.create!(name: "Main Street", lanes: 2, parking?: true, open?: false)
     mini = main1.cars.create!(name: "Tom's mini", driving?: false, parked?: true)

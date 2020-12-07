@@ -13,7 +13,7 @@ describe 'Car edit functionality', type: :feature do
     click_link 'edit'
 
     expect(current_path).to eq("/cars/#{mini.id}/edit")
-    
+
     fill_in 'name', with: 'Herbert'
 
     click_button 'update'

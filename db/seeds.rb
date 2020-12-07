@@ -13,8 +13,16 @@ Car.destroy_all
 
 FactoryBot.create_list(:dealer, 5)
 
+FactoryBot.create_list(:road, 5)
+
 5.times do
   Dealer.all.each do |dealer|
     dealer.trucks.create(year: rand(1900..2020), make: Faker::Vehicle.make, model: Faker::Vehicle.model)
+  end
+end
+
+5.times do
+  Road.all.each do |road|
+    road.cars.create(name: Faker::Vehicle.make_and_model, driving?: Faker::Boolean.boolean, parked?: Faker::Boolean.boolean)
   end
 end
