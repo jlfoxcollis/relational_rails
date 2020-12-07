@@ -1,6 +1,10 @@
 class DealersController < ApplicationController
   def index
-    @dealers = Dealer.date_time_sort
+    if request.post?
+      @dealers = Dealer.sort_by_trucks_count
+    else
+      @dealers = Dealer.date_time_sort
+    end
   end
 
   def new
@@ -24,8 +28,13 @@ class DealersController < ApplicationController
   end
 
   def trucks
-    @dealer = Dealer.find(params[:id])
-    @trucks = @dealer.trucks
+    if request.post?
+      @dealer = Dealer.find(params[:id])
+      @trucks = @dealer.sort_alphabetically
+    else
+      @dealer = Dealer.find(params[:id])
+      @trucks = @dealer.trucks
+    end
   end
 
   def edit

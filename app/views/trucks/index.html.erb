@@ -15,20 +15,34 @@
 
   <body>
     <a href="/">Home Page</a>
+    <a href="/dealers">Dealers Page</a>
     <h2>Welcome to the Trucks Collective Inventory Page</h2>
+    <%= form_tag do %>
+    <%= label_tag 'Search by year:' %>
+    <h3><%= text_field_tag "orderbyyear", "1929" %></h3>
+    <div>
+      <%= submit_tag 'sort' %>
+    </div>
+      <% end %>
     <table>
       <tr>
+        <th>View Truck</th>
         <th>Year</th>
         <th>Make</th>
         <th>Model</th>
-        <th>Dealer ID</th>
+        <th>Dealer</th>
+        <th>Edit</th>
+        <th>Delete</th>
       </tr>
     <% @trucks.each do |truck| %>
       <tr>
+        <td><a href="/trucks/<%= truck.id %>">View</a></td>
         <td><%= truck.year %></td>
         <td><%= truck.make %></td>
         <td><%= truck.model %></td>
-        <td><%= truck.dealer_id %></td>
+        <td><a href="/dealers/<%= truck.dealer_id %>"><%= truck.dealer.name %></a></td>
+        <td><a href="/trucks/<%= truck.id %>/edit">Edit</a></td>
+        <td><a data-method="delete" href="/trucks/<%= truck.id %>">Delete</a></td>
       <tr>
     <% end %>
   </table>

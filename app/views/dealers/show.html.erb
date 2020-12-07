@@ -4,9 +4,8 @@
       table, th, td {
         border: 1px solid black;
         text-align: left;
-        padding: 5px;
+        padding: 0px;
       }
-
       th {
         font-weight: 900;
       }
@@ -14,20 +13,21 @@
   list-style-type: none;
   color:black;
   margin: 0;
-  padding: 5;
+  padding: 0;
   overflow: hidden;
   background-color: #ffffff;
 }
 li {
   float: left;
-  font-size: 1.2em;
-  word-spacing: 5px;
+  font-size: 1.0em;
+  word-spacing: 0px;
 }
 
 li a {
   display: block;
+  background-color: white;
   color: black;
-  padding: 5px;
+  padding: 2px;
 }
 
 li a:hover {
@@ -38,7 +38,9 @@ li a:hover {
 
   <body>
     <ul class="navbar">
+      <li><a href="/">Home Page</a></li>
       <li><a href="/dealers">Dealers Index</a></li>
+      <li><a href="/trucks/">All Trucks Index</a></li>
       <li><a href="/dealers/<%= @dealer.id %>/trucks">Trucks</a></li>
       <li><a href="/dealers/<%= @dealer.id %>/edit">Edit</a></li>
       <li><a data-method="delete" href="/dealers/<%= @dealer.id %>">Delete</a></li>

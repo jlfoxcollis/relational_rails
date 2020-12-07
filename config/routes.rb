@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   #Dealer Parent
   get '/', to: 'welcome#index'
+  post '/dealers', to: 'dealers#index'
   get '/dealers', to: 'dealers#index'
   get '/dealers/new', to: 'dealers#new'
   post '/dealers/new', to: 'dealers#create'
@@ -9,6 +10,7 @@ Rails.application.routes.draw do
   get '/dealers/:id/edit', to: 'dealers#edit'
   post '/dealers/:id/edit', to: 'dealers#update'
   delete '/dealers/:id', to: 'dealers#destroy'
+  post '/dealers/:id/trucks', to: 'dealers#trucks'
 
   #Roads Parent
 
@@ -33,13 +35,15 @@ Rails.application.routes.draw do
 
   # Trucks Child Dealer Parent
   get '/trucks', to: 'trucks#index'
+  post '/trucks', to: 'trucks#index'
   get '/dealers/:id/trucks', to: 'dealers#trucks'
   get '/trucks/:id', to: 'trucks#show'
   get '/dealers/:id/trucks/new', to: 'trucks#new'
   post '/dealers/:id/trucks/new', to: 'trucks#create'
   get '/trucks/:id/edit', to: 'trucks#edit'
+  post '/trucks/:id/edit', to: 'trucks#update'
   get '/dealers/:id/trucks/:id', to: 'trucks#show'
-  post '/dealers/:id/trucks/:id/edit', to: 'trucks#update'
   get '/dealers/:id/trucks/:id/edit', to: 'trucks#edit'
+  post '/dealers/:id/trucks/:id/edit', to: 'trucks#update'
   delete '/trucks/:id', to: 'trucks#destroy'
 end

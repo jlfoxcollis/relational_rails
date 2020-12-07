@@ -12,9 +12,10 @@
   </style>
 </head>
 <body>
+  <a href="/trucks">Trucks Index</a>
+  <a href="/dealers/<%= @truck.dealer_id %>">Dealer Page</a>
   <a href="/trucks/<%= @truck.id %>/edit">Edit Truck</a>
-  <a data-method="delete" href="/trucks/<%= @truck.id %>"> Delete</a>
-<%# /dealers/<%= params[:id] %> %>
+  <%= link_to 'Delete', "/trucks/ @truck.id ", method: :delete %>
 <table>
   <tr>
     <th>Year</th>

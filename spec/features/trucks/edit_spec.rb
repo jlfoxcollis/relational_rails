@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'truck edit form', type: :feature do
-  xit 'has a form for editing' do
+  it 'has a form for editing' do
     medved = Dealer.create!(name: "Medved", city: "Denver", state: "CO", open: true)
     medved.trucks.create!(year: 1999, model: "F150", make: "Ford")
 

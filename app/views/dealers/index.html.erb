@@ -16,20 +16,29 @@
 
 <body>
   <a href="/">Home Page</a>
+  <a href="/trucks">Trucks Index</a>
+  <a href="/dealers/new">Add a Dealer</a><br><br>
   <h1 id="mainheader"> All Dealers</h1>
+  <%= form_tag do %>
+  <div>
+    <%= submit_tag 'Sort Dealers by Trucks count' %>
+  </div>
+  <% end %><br>
 <table style="  border: 1px solid black;">
   <tr>
     <th>Dealer Name</th>
     <th>Creation Date</th>
+    <th>Edit</th>
+    <th>Delete</th>
   </tr>
 <% @dealers.each do |dealer| %>
 <tr>
 <td><a href="/dealers/<%= dealer.id %>"><%= dealer.name %></a></td>
 <td><%= dealer.time_format %></td>
+<td><a href="/dealers/<%= dealer.id %>/edit">Edit</a></td>
+<td><a href="/dealers/<%= dealer.id %>/delete">Delete</a></td>
 </tr>
 <% end %>
 </table>
-
-<h2><a href="/dealers/new">Add a Dealer</a></h2>
 </body>
 </html>
