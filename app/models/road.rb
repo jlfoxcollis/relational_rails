@@ -8,4 +8,8 @@ class Road < ApplicationRecord
   def self.open_sort
     Road.order(open?: :desc)
   end
+
+  def cars_by_parked
+    cars.order(parked?: :desc)
+  end
 end
