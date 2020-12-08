@@ -23,14 +23,13 @@ Rails.application.routes.draw do
 
   # Cars Child Roads Parent
   get '/cars', to: 'cars#index'
-  get '/roads/:id/cars', to: 'cars#parent_index'
   get '/cars/:id', to: 'cars#show'
   get '/roads/:id/cars/new', to: 'cars#new'
   post '/roads/:id/cars', to: 'cars#create'
   get '/cars/:id/edit', to: 'cars#edit'
   patch '/cars/:id', to: 'cars#update'
   delete '/cars/:id', to: 'cars#destroy'
-
+  
   # Trucks Child Dealer Parent
   get '/trucks', to: 'trucks#index'
   post '/trucks', to: 'trucks#index'
@@ -41,6 +40,7 @@ Rails.application.routes.draw do
   get '/trucks/:id', to: 'trucks#show'
   get '/dealers/:id/trucks/:id', to: 'trucks#show'
   delete '/trucks/:id', to: 'trucks#destroy'
-
+  
   get '/dealers/:id/trucks', to: 'trucks_dealer#index'
+  get '/roads/:id/cars', to: 'cars_road#index'
 end

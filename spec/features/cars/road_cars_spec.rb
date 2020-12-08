@@ -7,7 +7,7 @@ describe 'Roads Cars', type: :feature do
     mini = main1.cars.create!(name: "Tom's mini", parked?: true)
     honda = main1.cars.create!(name: "Buddy", parked?: false)
 
-    visit "/roads/#{mini.road.id}/cars"
+    visit "/roads/#{mini.road_id}/cars"
 
     expect(page).to have_content("#{mini.name}")
     expect(page).to have_content("#{honda.name}")
