@@ -1,4 +1,4 @@
-<%= form_tag do  %>
+<%= form_tag "/roads/#{params[:id]}/cars/", method: :post do  %>
 <%= hidden_field_tag :road_id, params[:id] %>
 <%= label_tag 'Car name:' %>
 <%= text_field_tag :name %><br><br>

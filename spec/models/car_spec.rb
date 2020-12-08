@@ -14,8 +14,6 @@ RSpec.describe Car, type: :model do
       end
     end
 
-
-
     1.times do
       Road.all.each do |road|
         @early = road.cars.create(name: "early", parked?: Faker::Boolean.boolean)
@@ -25,11 +23,11 @@ RSpec.describe Car, type: :model do
     allow(@early).to receive(:created_at) {DateTime.parse("1909-11-05 16:34:45") }
 
     # don't look here
-    array = []
+    array1 = []
     Car.date_time_sort.each do |car|
-      array << car.name
+      array1 << car.name
     end
 
-    expect(array.first).to eq("#{@early.name}")
+    expect(array1.first).to eq("#{@early.name}")
   end
 end
