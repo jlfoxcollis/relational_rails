@@ -1,6 +1,14 @@
 class RoadsController < ApplicationController
   def index
-    @roads = Road.all
+    @num_cars = false
+    if params["commit"] == "sort"
+      @roads = Road.by_cars
+      @num_cars = true
+    elsif params["commit"] == "filter"
+      @roads = Road.more_lanes_than(params["lane filter"])
+    else
+      @roads = Road.all
+    end
   end
 
   def show

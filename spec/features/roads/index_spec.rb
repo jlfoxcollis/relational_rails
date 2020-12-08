@@ -41,4 +41,20 @@ describe 'Roads index page', type: :feature do
       click_button 'submit'
     }.to change(Road, :count).by(1)
   end
+
+  it 'Can display a portion of roads by lanes' do
+    pine = Road.create(name: "Pine", open?: false, lanes: 9)
+    elm = Road.create(name: "Elm", open?: true, lanes: 6)
+    water = Road.create(name: "Water", open?: false, lanes: 1)
+
+    visit '/roads'
+
+    fill_in 'lane filter', with: "#{water.lanes}"
+
+    click_button 'filter'
+
+    expect(page).to have_content("#{pine.name}")
+    expect(page).to have_content("#{elm.name}")
+    expect(page).not_to have_content("#{water.name}")
+  end
 end
