@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get '/', to: 'welcome#index'
   #Dealer Parent
-  post '/dealers', to: 'dealers#index'
+  patch '/dealers', to: 'dealers#index'
   get '/dealers', to: 'dealers#index'
   get '/dealers/new', to: 'dealers#new'
   post '/dealers', to: 'dealers#create'
@@ -40,7 +40,7 @@ Rails.application.routes.draw do
   get '/dealers/:id/trucks/new', to: 'trucks#new'
   post '/dealers/:id/trucks', to: 'trucks#create'
   get '/trucks/:id/edit', to: 'trucks#edit'
-  post '/trucks/:id', to: 'trucks#update'
+  patch '/trucks/:id', to: 'trucks#update'
   get '/trucks/:id', to: 'trucks#show'
   get '/dealers/:id/trucks/:id', to: 'trucks#show'
   delete '/trucks/:id', to: 'trucks#destroy'

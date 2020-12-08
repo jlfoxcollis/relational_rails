@@ -1,5 +1,5 @@
-
 <%= form_tag "/dealers/#{params[:id]}/trucks", method: :post do %>
+<%= hidden_field_tag :dealer_id, params[:id] %>
 <%= label_tag 'year:' %>
 <%= text_field_tag :year %><br>
 <%= label_tag 'make:' %>
@@ -7,6 +7,6 @@
 <%= label_tag 'model:' %>
 <%= text_field_tag :model %><br>
 <div>
-  <%= submit_tag "create" %>
+  <%= submit_tag "Create a Truck" %>
 </div>
 <% end %>

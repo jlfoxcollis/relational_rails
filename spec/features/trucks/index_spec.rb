@@ -31,10 +31,11 @@ RSpec.describe 'Test the Monster Trucks!', type: :feature do
     expect(current_path).to eq("/dealers/#{medved.id}/trucks/new/")
 
     fill_in 'year', with: '1909'
+    fill_in 'make', with: 'ford'
+    fill_in 'model', with: 'F150'
 
-    click_button 'create'
-
-    expect(current_path).to eq("/dealers/#{medved.id}/trucks")
+    click_button 'Create a Truck'
+    
     expect(page).to have_content("1909")
   end
 

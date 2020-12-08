@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/magicmax/turing/mod2/relational_rails/config/environment.rb": {
+      "/Users/james/turing/mod2/relational_rails/config/environment.rb": {
         "lines": [
           null,
           1,
@@ -10,7 +10,7 @@
           1
         ]
       },
-      "/Users/magicmax/turing/mod2/relational_rails/config/application.rb": {
+      "/Users/james/turing/mod2/relational_rails/config/application.rb": {
         "lines": [
           1,
           null,
@@ -49,7 +49,7 @@
           null
         ]
       },
-      "/Users/magicmax/turing/mod2/relational_rails/config/boot.rb": {
+      "/Users/james/turing/mod2/relational_rails/config/boot.rb": {
         "lines": [
           1,
           null,
@@ -57,7 +57,7 @@
           1
         ]
       },
-      "/Users/magicmax/turing/mod2/relational_rails/config/environments/test.rb": {
+      "/Users/james/turing/mod2/relational_rails/config/environments/test.rb": {
         "lines": [
           1,
           null,
@@ -107,7 +107,7 @@
           null
         ]
       },
-      "/Users/magicmax/turing/mod2/relational_rails/config/initializers/application_controller_renderer.rb": {
+      "/Users/james/turing/mod2/relational_rails/config/initializers/application_controller_renderer.rb": {
         "lines": [
           null,
           null,
@@ -119,7 +119,7 @@
           null
         ]
       },
-      "/Users/magicmax/turing/mod2/relational_rails/config/initializers/assets.rb": {
+      "/Users/james/turing/mod2/relational_rails/config/initializers/assets.rb": {
         "lines": [
           null,
           null,
@@ -137,7 +137,7 @@
           null
         ]
       },
-      "/Users/magicmax/turing/mod2/relational_rails/config/initializers/backtrace_silencers.rb": {
+      "/Users/james/turing/mod2/relational_rails/config/initializers/backtrace_silencers.rb": {
         "lines": [
           null,
           null,
@@ -148,7 +148,7 @@
           null
         ]
       },
-      "/Users/magicmax/turing/mod2/relational_rails/config/initializers/content_security_policy.rb": {
+      "/Users/james/turing/mod2/relational_rails/config/initializers/content_security_policy.rb": {
         "lines": [
           null,
           null,
@@ -177,7 +177,7 @@
           null
         ]
       },
-      "/Users/magicmax/turing/mod2/relational_rails/config/initializers/cookies_serializer.rb": {
+      "/Users/james/turing/mod2/relational_rails/config/initializers/cookies_serializer.rb": {
         "lines": [
           null,
           null,
@@ -186,7 +186,7 @@
           1
         ]
       },
-      "/Users/magicmax/turing/mod2/relational_rails/config/initializers/filter_parameter_logging.rb": {
+      "/Users/james/turing/mod2/relational_rails/config/initializers/filter_parameter_logging.rb": {
         "lines": [
           null,
           null,
@@ -194,7 +194,7 @@
           1
         ]
       },
-      "/Users/magicmax/turing/mod2/relational_rails/config/initializers/inflections.rb": {
+      "/Users/james/turing/mod2/relational_rails/config/initializers/inflections.rb": {
         "lines": [
           null,
           null,
@@ -214,7 +214,7 @@
           null
         ]
       },
-      "/Users/magicmax/turing/mod2/relational_rails/config/initializers/mime_types.rb": {
+      "/Users/james/turing/mod2/relational_rails/config/initializers/mime_types.rb": {
         "lines": [
           null,
           null,
@@ -222,7 +222,7 @@
           null
         ]
       },
-      "/Users/magicmax/turing/mod2/relational_rails/config/initializers/wrap_parameters.rb": {
+      "/Users/james/turing/mod2/relational_rails/config/initializers/wrap_parameters.rb": {
         "lines": [
           null,
           null,
@@ -240,7 +240,7 @@
           null
         ]
       },
-      "/Users/magicmax/turing/mod2/relational_rails/spec/factories/dealers.rb": {
+      "/Users/james/turing/mod2/relational_rails/spec/factories/dealers.rb": {
         "lines": [
           1,
           1,
@@ -278,7 +278,7 @@
           null
         ]
       },
-      "/Users/magicmax/turing/mod2/relational_rails/config/routes.rb": {
+      "/Users/james/turing/mod2/relational_rails/config/routes.rb": {
         "lines": [
           1,
           null,
@@ -292,18 +292,7 @@
           1,
           1,
           1,
-          1,
           null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
           null,
           null,
           null,
@@ -317,7 +306,7 @@
           1,
           null,
           null,
-          1,
+          null,
           1,
           1,
           1,
@@ -328,15 +317,21 @@
           1,
           null,
           null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
           1,
           null
         ]
       },
-<<<<<<< HEAD
       "/Users/james/turing/mod2/relational_rails/spec/support/factory_bot.rb": {
-=======
-      "/Users/magicmax/turing/mod2/relational_rails/app/helpers/application_helper.rb": {
->>>>>>> 11b07be01c4636627868b0a2a17a4e9af96f9c91
         "lines": [
           1,
           null,
@@ -345,17 +340,13 @@
           null
         ]
       },
-<<<<<<< HEAD
       "/Users/james/turing/mod2/relational_rails/app/helpers/application_helper.rb": {
-=======
-      "/Users/magicmax/turing/mod2/relational_rails/spec/support/factory_bot.rb": {
->>>>>>> 11b07be01c4636627868b0a2a17a4e9af96f9c91
         "lines": [
           1,
           null
         ]
       },
-      "/Users/magicmax/turing/mod2/relational_rails/spec/features/cars/edit_spec.rb": {
+      "/Users/james/turing/mod2/relational_rails/spec/features/cars/edit_spec.rb": {
         "lines": [
           1,
           null,
@@ -396,7 +387,7 @@
           null
         ]
       },
-      "/Users/magicmax/turing/mod2/relational_rails/spec/features/cars/index_spec.rb": {
+      "/Users/james/turing/mod2/relational_rails/spec/features/cars/index_spec.rb": {
         "lines": [
           1,
           null,
@@ -414,7 +405,7 @@
           null
         ]
       },
-      "/Users/magicmax/turing/mod2/relational_rails/spec/features/cars/new_spec.rb": {
+      "/Users/james/turing/mod2/relational_rails/spec/features/cars/new_spec.rb": {
         "lines": [
           1,
           null,
@@ -447,7 +438,7 @@
           null
         ]
       },
-      "/Users/magicmax/turing/mod2/relational_rails/spec/features/cars/road_cars_spec.rb": {
+      "/Users/james/turing/mod2/relational_rails/spec/features/cars/road_cars_spec.rb": {
         "lines": [
           1,
           null,
@@ -466,7 +457,7 @@
           null
         ]
       },
-      "/Users/magicmax/turing/mod2/relational_rails/spec/features/cars/show_spec.rb": {
+      "/Users/james/turing/mod2/relational_rails/spec/features/cars/show_spec.rb": {
         "lines": [
           1,
           null,
@@ -484,7 +475,7 @@
           null
         ]
       },
-      "/Users/magicmax/turing/mod2/relational_rails/spec/features/dealers/index_spec.rb": {
+      "/Users/james/turing/mod2/relational_rails/spec/features/dealers/index_spec.rb": {
         "lines": [
           1,
           null,
@@ -533,23 +524,10 @@
           null,
           1,
           null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
-          1,
-          null,
-          null,
-          null,
           null
         ]
       },
-      "/Users/magicmax/turing/mod2/relational_rails/spec/features/dealers/show_spec.rb": {
+      "/Users/james/turing/mod2/relational_rails/spec/features/dealers/show_spec.rb": {
         "lines": [
           1,
           null,
@@ -619,22 +597,22 @@
           1,
           null,
           1,
-          1,
-          1,
-          1,
-          1,
-          1,
           null,
-          1,
           null,
-          1,
           null,
-          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
           null,
           null
         ]
       },
-      "/Users/magicmax/turing/mod2/relational_rails/spec/features/roads/index_spec.rb": {
+      "/Users/james/turing/mod2/relational_rails/spec/features/roads/index_spec.rb": {
         "lines": [
           1,
           null,
@@ -698,7 +676,7 @@
           null
         ]
       },
-      "/Users/magicmax/turing/mod2/relational_rails/spec/features/roads/show_spec.rb": {
+      "/Users/james/turing/mod2/relational_rails/spec/features/roads/show_spec.rb": {
         "lines": [
           1,
           null,
@@ -748,7 +726,7 @@
           null
         ]
       },
-      "/Users/magicmax/turing/mod2/relational_rails/spec/features/trucks/edit_spec.rb": {
+      "/Users/james/turing/mod2/relational_rails/spec/features/trucks/edit_spec.rb": {
         "lines": [
           null,
           1,
@@ -772,7 +750,7 @@
           null
         ]
       },
-      "/Users/magicmax/turing/mod2/relational_rails/spec/features/trucks/index_spec.rb": {
+      "/Users/james/turing/mod2/relational_rails/spec/features/trucks/index_spec.rb": {
         "lines": [
           null,
           1,
@@ -807,10 +785,11 @@
           1,
           null,
           1,
-          null,
+          1,
           1,
           null,
           1,
+          null,
           1,
           null,
           null,
@@ -830,7 +809,7 @@
           null
         ]
       },
-      "/Users/magicmax/turing/mod2/relational_rails/spec/features/trucks/show_spec.rb": {
+      "/Users/james/turing/mod2/relational_rails/spec/features/trucks/show_spec.rb": {
         "lines": [
           null,
           1,
@@ -877,7 +856,7 @@
           null
         ]
       },
-      "/Users/magicmax/turing/mod2/relational_rails/spec/models/car_spec.rb": {
+      "/Users/james/turing/mod2/relational_rails/spec/models/car_spec.rb": {
         "lines": [
           1,
           null,
@@ -914,7 +893,7 @@
           null
         ]
       },
-      "/Users/magicmax/turing/mod2/relational_rails/app/models/car.rb": {
+      "/Users/james/turing/mod2/relational_rails/app/models/car.rb": {
         "lines": [
           1,
           1,
@@ -922,14 +901,14 @@
           null
         ]
       },
-      "/Users/magicmax/turing/mod2/relational_rails/app/models/application_record.rb": {
+      "/Users/james/turing/mod2/relational_rails/app/models/application_record.rb": {
         "lines": [
           1,
           1,
           null
         ]
       },
-      "/Users/magicmax/turing/mod2/relational_rails/spec/models/dealer_spec.rb": {
+      "/Users/james/turing/mod2/relational_rails/spec/models/dealer_spec.rb": {
         "lines": [
           null,
           1,
@@ -987,27 +966,11 @@
           null
         ]
       },
-      "/Users/magicmax/turing/mod2/relational_rails/app/models/dealer.rb": {
+      "/Users/james/turing/mod2/relational_rails/app/models/dealer.rb": {
         "lines": [
           1,
           1,
           1,
-          null,
-          1,
-          7,
-          null,
-          null,
-          1,
-          2,
-          null,
-          null,
-          1,
-          9,
-          null,
-          null,
-          1,
-          14,
-          null,
           null,
           1,
           6,
@@ -1016,10 +979,26 @@
           1,
           2,
           null,
+          null,
+          1,
+          5,
+          null,
+          null,
+          1,
+          8,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
           null
         ]
       },
-      "/Users/magicmax/turing/mod2/relational_rails/spec/models/road_spec.rb": {
+      "/Users/james/turing/mod2/relational_rails/spec/models/road_spec.rb": {
         "lines": [
           1,
           null,
@@ -1085,7 +1064,7 @@
           null
         ]
       },
-      "/Users/magicmax/turing/mod2/relational_rails/app/models/road.rb": {
+      "/Users/james/turing/mod2/relational_rails/app/models/road.rb": {
         "lines": [
           1,
           1,
@@ -1116,7 +1095,7 @@
           null
         ]
       },
-      "/Users/magicmax/turing/mod2/relational_rails/spec/models/truck_spec.rb": {
+      "/Users/james/turing/mod2/relational_rails/spec/models/truck_spec.rb": {
         "lines": [
           1,
           1,
@@ -1150,7 +1129,7 @@
           null
         ]
       },
-      "/Users/magicmax/turing/mod2/relational_rails/app/models/truck.rb": {
+      "/Users/james/turing/mod2/relational_rails/app/models/truck.rb": {
         "lines": [
           1,
           1,
@@ -1179,7 +1158,7 @@
           null
         ]
       },
-      "/Users/magicmax/turing/mod2/relational_rails/app/controllers/cars_controller.rb": {
+      "/Users/james/turing/mod2/relational_rails/app/controllers/cars_controller.rb": {
         "lines": [
           1,
           1,
@@ -1234,43 +1213,43 @@
           null
         ]
       },
-      "/Users/magicmax/turing/mod2/relational_rails/app/controllers/application_controller.rb": {
+      "/Users/james/turing/mod2/relational_rails/app/controllers/application_controller.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/magicmax/turing/mod2/relational_rails/app/controllers/dealers_controller.rb": {
+      "/Users/james/turing/mod2/relational_rails/app/controllers/dealers_controller.rb": {
         "lines": [
           1,
           1,
-          6,
-          1,
+          4,
+          0,
           null,
+          4,
+          null,
+          null,
+          null,
+          1,
           5,
           null,
           null,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
           null,
           1,
           5,
+          5,
+          0,
           null,
-          null,
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          1,
-          7,
-          7,
-          1,
-          null,
-          6,
+          5,
           null,
           null,
           null,
@@ -1297,7 +1276,7 @@
           null
         ]
       },
-      "/Users/magicmax/turing/mod2/relational_rails/app/controllers/roads_controller.rb": {
+      "/Users/james/turing/mod2/relational_rails/app/controllers/roads_controller.rb": {
         "lines": [
           1,
           1,
@@ -1351,7 +1330,7 @@
           null
         ]
       },
-      "/Users/magicmax/turing/mod2/relational_rails/app/controllers/trucks_controller.rb": {
+      "/Users/james/turing/mod2/relational_rails/app/controllers/trucks_controller.rb": {
         "lines": [
           1,
           1,
@@ -1363,14 +1342,11 @@
           null,
           null,
           1,
-          1,
           null,
           null,
           1,
           1,
-          null,
           1,
-          null,
           1,
           null,
           null,
@@ -1406,10 +1382,6 @@
         ]
       }
     },
-<<<<<<< HEAD
-    "timestamp": 1607454496
-=======
-    "timestamp": 1607462191
->>>>>>> 11b07be01c4636627868b0a2a17a4e9af96f9c91
+    "timestamp": 1607465018
   }
 }

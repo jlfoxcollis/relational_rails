@@ -13,8 +13,7 @@ class TrucksController < ApplicationController
   def create
     truck = Truck.new(truck_params)
     truck.save
-
-    redirect_to "/dealers/#{truck.dealer_id}/trucks"
+    redirect_to "/dealers/#{params[:dealer_id]}/trucks"
   end
 
   def show
