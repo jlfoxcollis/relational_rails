@@ -12,8 +12,8 @@ RSpec.describe 'truck edit form', type: :feature do
 
     fill_in 'make', with: "Chevy"
 
-    click_button 'patch'
-
+    click_on 'update'
+    
     expect(current_path).to eq("/trucks/#{medved.trucks.first.id}")
     expect(page).to have_content("Chevy")
     end

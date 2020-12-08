@@ -13,8 +13,8 @@
 </head>
 <body>
   <a href="/trucks">Trucks Index</a>
-  <a href="/dealers/<%= @truck.dealer_id %>">Dealer Page</a>
   <a href="/trucks/<%= @truck.id %>/edit">Edit Truck</a>
+  <a href="/dealers/<%= @truck.dealer_id %>">Dealer Page</a>
   <%= link_to 'Delete', "/trucks/#{@truck.id} ", method: :delete %>
 <table>
   <tr>

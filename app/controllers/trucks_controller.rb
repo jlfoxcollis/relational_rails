@@ -34,11 +34,11 @@ class TrucksController < ApplicationController
 
   def update
     truck = Truck.find(params[:id])
-    truck.update({
+    # binding.pry
+    truck.update!({
       year: params[:year],
       make: params[:make],
       model: params[:model],
-      dealer_id: params[:dealer_id]
     })
     redirect_to "/trucks/#{truck.id}"
   end

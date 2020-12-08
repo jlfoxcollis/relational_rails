@@ -4,7 +4,7 @@ class Dealer < ApplicationRecord
   # scope :sort_trucks, -> { order("trucks ASC") }
 
   def self.date_time_sort
-    Dealer.order("open DESC, created_at ASC")
+    Dealer.order("open DESC, created_at DESC")
   end
 
   def self.update_date_time_sort

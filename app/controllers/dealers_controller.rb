@@ -7,6 +7,10 @@ class DealersController < ApplicationController
     end
   end
 
+  def show
+    @dealer = Dealer.find(params[:id])
+  end
+  
   def new
   end
 
@@ -23,16 +27,12 @@ class DealersController < ApplicationController
     redirect_to '/dealers'
   end
 
-  def show
-    @dealer = Dealer.find(params[:id])
-  end
 
   def trucks
+    @dealer = Dealer.find(params[:id])
     if request.post?
-      @dealer = Dealer.find(params[:id])
       @trucks = @dealer.sort_alphabetically
     else
-      @dealer = Dealer.find(params[:id])
       @trucks = @dealer.trucks
     end
   end
