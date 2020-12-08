@@ -10,7 +10,7 @@
       <li><a href="/dealers/new">Add a Dealer</a></li>
     </ul>
     <h1 id="mainheader"> All Dealers</h1>
-    <%= form_tag do %>
+    <%= form_tag "/dealers", method: :get do %>
     <div>
       <%= submit_tag 'Sort Dealers by Trucks count' %>
     </div>

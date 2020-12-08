@@ -1,6 +1,6 @@
 class DealersController < ApplicationController
   def index
-    if request.post?
+    if params["commit"] == "Sort Dealers by Trucks count"
       @dealers = Dealer.sort_by_trucks_count
     else
       @dealers = Dealer.date_time_sort
