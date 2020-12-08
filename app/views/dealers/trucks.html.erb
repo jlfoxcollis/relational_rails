@@ -1,25 +1,23 @@
 <html>
 <head>
-  <style>
-    table, th, td {
-      border: 1px solid black;
-      text-align: left;
-      padding: 5px;
-    }
-
-    th {
-      font-weight: 900;
-    }
-  </style>
 </head>
 <body>
-  <a href="/dealers/<%= @dealer.id %>"> Dealer Page</a>
-  <a href="/dealers">Dealers Index</a>
-  <a href="/trucks/">All Trucks Index</a>
-  <a href="/dealers/<%= @dealer.id %>/trucks/new/?dealer_id=<%= @dealer.id %>">Adopt A Truck</a><br/>
+  <ul class="navbar">
+    <li><a href="/dealers/<%= @dealer.id %>"> Dealer Page</a></li>
+    <li><a href="/dealers">Dealers Index</a></li>
+    <li><a href="/trucks/">All Trucks Index</a></li>
+    <li><a href="/dealers/<%= @dealer.id %>/trucks/new/?dealer_id=<%= @dealer.id %>">Adopt A Truck</a></li>
+  </ul><br/>
   <%= form_tag do %>
   <div>
     <%= submit_tag 'Sort by make/model' %>
+  </div>
+  <% end %>
+  <%= form_tag do %>
+  <%= label_tag 'Search by keyword:' %>
+  <h3><%= text_field_tag "filter", "keyword" %></h3>
+  <div>
+    <%= submit_tag 'filter' %>
   </div>
   <% end %>
   <h2>Number of Trucks: <%= @dealer.trucks_count %></h2>

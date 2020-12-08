@@ -1,21 +1,12 @@
 <html>
   <head>
-    <style>
-      table, th, td {
-        border: 1px solid black;
-        text-align: left;
-      }
-
-      th {
-        font-weight: 900;
-      }
-
-    </style>
   </head>
 
   <body>
-    <a href="/">Home Page</a>
-    <a href="/dealers">Dealers Page</a>
+    <ul class="navbar">
+      <li><a href="/">Home Page</a></li>
+      <li><a href="/dealers">Dealers Page</a></li>
+    </ul>
     <h2>Welcome to the Trucks Collective Inventory Page</h2>
     <%= form_tag do %>
     <%= label_tag 'Search by year:' %>
@@ -23,7 +14,14 @@
     <div>
       <%= submit_tag 'sort' %>
     </div>
-      <% end %>
+    <% end %>
+    <%= form_tag do %>
+    <%= label_tag 'Search by keyword:' %>
+    <h3><%= text_field_tag "filter", "keyword" %></h3>
+    <div>
+      <%= submit_tag 'filter' %>
+    </div>
+    <% end %>
     <table>
       <tr>
         <th>View Truck</th>

@@ -1,21 +1,12 @@
 <head>
-  <style>
-    table, th, td {
-      border: 1px solid black;
-      text-align: left;
-      padding: 5px;
-    }
-
-    th {
-      font-weight: 900;
-    }
-  </style>
 </head>
 <body>
-  <a href="/trucks">Trucks Index</a>
-  <a href="/trucks/<%= @truck.id %>/edit">Edit Truck</a>
-  <a href="/dealers/<%= @truck.dealer_id %>">Dealer Page</a>
-  <a href="/trucks/<%= @truck.id %>" data-method="delete" %> Delete</a>
+  <ul>
+    <li><a href="/trucks">Trucks Index</a></li>
+    <li><a href="/trucks/<%= @truck.id %>/edit">Edit Truck</a></li>
+    <li><a href="/dealers/<%= @truck.dealer_id %>">Dealer Page</a></li>
+    <li><a href="/trucks/<%= @truck.id %>" data-method="delete" %> Delete</a></li>
+  </ul>
 <table>
   <tr>
     <th>Year</th>

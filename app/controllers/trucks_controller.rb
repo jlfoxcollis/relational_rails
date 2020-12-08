@@ -1,7 +1,7 @@
 class TrucksController < ApplicationController
   def index
     if request.post?
-      @trucks = Truck.where("year >= ?", params[:orderbyyear])
+      @trucks = params[:filter].blank? ? Truck.where("year >= ?", params[:orderbyyear]) : Truck.search(params[:filter])
     else
       @trucks = Truck.all
     end

@@ -1,39 +1,5 @@
 <html>
   <head>
-    <style>
-      table, th, td {
-        border: 1px solid black;
-        text-align: left;
-        padding: 0px;
-      }
-      th {
-        font-weight: 900;
-      }
-      .navbar {
-  list-style-type: none;
-  color:black;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #ffffff;
-}
-li {
-  float: left;
-  font-size: 1.0em;
-  word-spacing: 0px;
-}
-
-li a {
-  display: block;
-  background-color: white;
-  color: black;
-  padding: 2px;
-}
-
-li a:hover {
-  background-color: red;
-}
-    </style>
   </head>
 
   <body>
@@ -53,12 +19,12 @@ li a:hover {
         <th>Founded</th>
         <th>Open?</th>
       </tr>
-    <tr>
-    <td><%= @dealer.name %></td>
-    <td><%= @dealer.city + ", " + @dealer.state %></td>
-    <td><%= @dealer.created_at %></td>
-    <td><%= @dealer.open %></td>
-    </tr>
+      <tr>
+        <td><%= @dealer.name %></td>
+        <td><%= @dealer.city + ", " + @dealer.state %></td>
+        <td><%= @dealer.created_at %></td>
+        <td><%= @dealer.open %></td>
+      </tr>
     </table>
   </body>
 </html>
