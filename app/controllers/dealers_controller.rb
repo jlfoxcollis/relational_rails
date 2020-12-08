@@ -10,20 +10,13 @@ class DealersController < ApplicationController
   def show
     @dealer = Dealer.find(params[:id])
   end
-  
+
   def new
   end
 
   def create
-    dealer = Dealer.new({
-      name: params[:name],
-      city: params[:city],
-      state: params[:state],
-      open: params[:open]
-    })
-
+    dealer = Dealer.new(dealer_params)
     dealer.save
-
     redirect_to '/dealers'
   end
 
@@ -43,13 +36,7 @@ class DealersController < ApplicationController
 
   def update
     dealer = Dealer.find(params[:id])
-    dealer.update_column(:updated_at, Time.now)
-    dealer.update({
-      name: params[:name],
-      city: params[:city],
-      state: params[:state],
-      open: params[:open]
-    })
+    dealer.update(dealer_params)
     redirect_to "/dealers/#{dealer.id}"
   end
 
@@ -57,4 +44,10 @@ class DealersController < ApplicationController
     Dealer.destroy(params[:id])
     redirect_to '/dealers'
   end
+end
+
+private
+
+def dealer_params
+  params.permit(:name, :city, :state, :open)
 end

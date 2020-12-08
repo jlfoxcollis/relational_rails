@@ -12,12 +12,7 @@ class TrucksController < ApplicationController
   end
 
   def create
-    truck = Truck.new({
-      year: params[:year],
-      make: params[:make],
-      model: params[:model],
-      dealer_id: params[:dealer_id]
-    })
+    truck = Truck.new(truck_params)
 
     truck.save
 
@@ -34,17 +29,18 @@ class TrucksController < ApplicationController
 
   def update
     truck = Truck.find(params[:id])
-    # binding.pry
-    truck.update!({
-      year: params[:year],
-      make: params[:make],
-      model: params[:model],
-    })
+    truck.update!(truck_params)
     redirect_to "/trucks/#{truck.id}"
   end
 
   def destroy
     Truck.destroy(params[:id])
     redirect_to "/trucks"
+  end
+
+  private
+
+  def truck_params
+    params.permit(:year, :make, :model, :dealer_id)
   end
 end

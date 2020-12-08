@@ -36,6 +36,19 @@ RSpec.describe 'Test the Monster Trucks!', type: :feature do
 
     expect(current_path).to eq("/dealers/#{medved.id}/trucks")
     expect(page).to have_content("1909")
-
   end
+
+  it "can filter by year" do
+    medved = Dealer.create!(name: "Medved", city: "Denver", state: "CO", open: true)
+    truck2 = medved.trucks.create!(year: 1999, model: "F150", make: "Ford")
+    truck1 = medved.trucks.create!(year: 1989, model: "F150", make: "Ford")
+
+    visit "/trucks"
+
+    fill_in 'orderbyyear', with: 1995
+    click_on 'sort'
+    expect(page).not_to have_content("#{truck1.year}")
+    expect(page).to have_content("#{truck2.year}")
+  end
+
 end
