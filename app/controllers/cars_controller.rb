@@ -20,7 +20,6 @@ class CarsController < ApplicationController
     else
       Car.create({
         name: params[:name],
-        driving?: params[:driving?],
         parked?: params[:parked?],
         road_id: params[:road_id]
       })
@@ -39,7 +38,6 @@ class CarsController < ApplicationController
     else
       car.update({
         name: params[:name],
-        driving?: params[:driving?],
         parked?: params[:parked?]
       })
       redirect_to "/cars/#{car.id}"

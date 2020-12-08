@@ -13,7 +13,6 @@ class RoadsController < ApplicationController
   def create
     Road.create({
       name: params[:name],
-      parking?: params[:parking?],
       open?: params[:open?],
       lanes: params[:lanes],
       date_created: params[:datetime]
@@ -29,7 +28,6 @@ class RoadsController < ApplicationController
     road = Road.find(params[:id])
     road.update({
       name: params[:name],
-      parking?: params[:parking?],
       open?: params[:open?],
       lanes: params[:lanes],
     })

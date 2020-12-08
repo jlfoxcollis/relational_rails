@@ -1,6 +1,5 @@
 <h1>Car:</h1>
 <p>Name: <%= @car.name %></p>
-<p>Is driving? <%= @car.driving?%></p>
 <p>Is parked? <%= @car.parked?%></p>
 <h2>Is currently in: <h4><a href="/roads/<%= @car.road.id %>/cars"><%= @car.road.name%></a><h4></h2>
 <h5>Entered road on: <%= @car.created_at.strftime("%m/%d/%Y")%></h5>

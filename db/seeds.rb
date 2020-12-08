@@ -23,6 +23,6 @@ end
 
 5.times do
   Road.all.each do |road|
-    road.cars.create(name: Faker::Vehicle.make_and_model, driving?: Faker::Boolean.boolean, parked?: Faker::Boolean.boolean)
+    road.cars.create(name: Faker::Vehicle.make_and_model, parked?: Faker::Boolean.boolean)
   end
 end

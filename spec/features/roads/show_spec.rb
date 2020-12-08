@@ -14,7 +14,7 @@ describe 'Roads show page', type: :feature do
   end
 
   it 'Can Edit Info' do
-    main = Road.create!(name: "Main Street", lanes: 2, parking?: true, open?: false)
+    main = Road.create!(name: "Main Street", lanes: 2, open?: false)
 
     visit "roads/#{main.id}"
 
@@ -22,7 +22,7 @@ describe 'Roads show page', type: :feature do
   end
 
   scenario 'creating a road' do
-    main1 = Road.create!(name: "Main Street", lanes: 2, parking?: true, open?: false)
+    main1 = Road.create!(name: "Main Street", lanes: 2, open?: false)
 
     visit "roads/#{main1.id}"
     click_link 'EDIT'
@@ -32,8 +32,8 @@ describe 'Roads show page', type: :feature do
   end
 
   scenario 'deleting a road' do
-    @main1 = Road.create!(name: "Main Street", lanes: 2, parking?: true, open?: false)
-    alley = Road.create!(name: "Alley 617", lanes: 0, parking?: true, open?: false)
+    @main1 = Road.create!(name: "Main Street", lanes: 2, open?: false)
+    alley = Road.create!(name: "Alley 617", lanes: 0, open?: false)
 
     visit "/roads/#{@main1.id}"
 

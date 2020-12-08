@@ -1,7 +1,6 @@
 <h1>Cars: <%= @cars.first.road.cars_count %></h1>
 <% @cars.each do |car| %>
 <p><a href='/cars/<%= car.id %>'><%= car.name %></a></p>
-<p>Is driving? <%= car.driving?%></p>
 <p>Is parked? <%= car.parked?%></p>
 <% end%>
 <h3><a href="/roads/<%= @cars.first.road.id %>/cars/new">Adopt Car</a></h3>

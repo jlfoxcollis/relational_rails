@@ -15,14 +15,12 @@ FactoryBot.define do
 
   factory :road do
     name { Faker::Address.street_suffix }
-    parking? { Faker::Boolean.boolean }
     open? { Faker::Boolean.boolean }
     lanes { rand(2..6) }
   end
 
   factory :car do
     name { Faker::Vehicle.make_and_model }
-    driving? { Faker::Boolean.boolean }
     parked? { Faker::Boolean.boolean }
     road
   end

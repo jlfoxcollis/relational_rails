@@ -3,8 +3,8 @@ require 'rails_helper'
 describe 'Roads index page', type: :feature do
 
   it 'Can Display Info' do
-    main = Road.create!(name: "Main Street", lanes: 2, parking?: true, open?: true)
-    alley = Road.create!(name: "Alley 617", lanes: 0, parking?: true, open?: false)
+    main = Road.create!(name: "Main Street", lanes: 2, open?: true)
+    alley = Road.create!(name: "Alley 617", lanes: 0, open?: false)
 
     visit '/roads'
 
@@ -13,7 +13,7 @@ describe 'Roads index page', type: :feature do
   end
 
   it 'Can link to new road', type: :feature do
-    main = Road.create!(name: "Main Street", lanes: 2, parking?: true, open?: true)
+    main = Road.create!(name: "Main Street", lanes: 2, open?: true)
 
     visit '/roads'
 

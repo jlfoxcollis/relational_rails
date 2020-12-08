@@ -11,7 +11,7 @@ RSpec.describe Road, type: :model do
 
       5.times do
         Road.all.each do |road|
-          road.cars.create(name: Faker::Vehicle.make_and_model, driving?: Faker::Boolean.boolean, parked?: Faker::Boolean.boolean)
+          road.cars.create(name: Faker::Vehicle.make_and_model, parked?: Faker::Boolean.boolean)
         end
       end
 
@@ -19,9 +19,9 @@ RSpec.describe Road, type: :model do
     end
 
     it 'Can sort true values first' do
-      pine = Road.create(name: "Pine", parking?: true, open?: false, lanes: 9)
-      elm = Road.create(name: "Elm", parking?: true, open?: true, lanes: 6)
-      water = Road.create(name: "Water", parking?: false, open?: false, lanes: 1)
+      pine = Road.create(name: "Pine", open?: false, lanes: 9)
+      elm = Road.create(name: "Elm", open?: true, lanes: 6)
+      water = Road.create(name: "Water", open?: false, lanes: 1)
     
       expect(Road.open_sort).to eq([elm, pine, water])
     end

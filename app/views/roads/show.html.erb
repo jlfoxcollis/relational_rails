@@ -3,7 +3,6 @@
 <h2>Cars: <%= @road.cars_count%></h2>
 <h2>Lanes: <%= @road.lanes%></h2>
 <h2>Road Open? <%= @road.open?%><h2>
-<h2>Parking? <%= @road.parking?%><h2>
 <ul class="navbar">
   <li><a href='/roads/<%= @road.id %>/edit'>EDIT</a></li>
   <li><a data-method="delete" href='/roads/<%= @road.id %>'>DELETE</a></li>

@@ -10,7 +10,7 @@ RSpec.describe Car, type: :model do
     
     4.times do
       Road.all.each do |road|
-        road.cars.create(name: Faker::Vehicle.make_and_model, driving?: Faker::Boolean.boolean, parked?: Faker::Boolean.boolean)
+        road.cars.create(name: Faker::Vehicle.make_and_model, parked?: Faker::Boolean.boolean)
       end
     end
 
@@ -18,7 +18,7 @@ RSpec.describe Car, type: :model do
 
     1.times do
       Road.all.each do |road|
-        @early = road.cars.create(name: "early", driving?: Faker::Boolean.boolean, parked?: Faker::Boolean.boolean)
+        @early = road.cars.create(name: "early", parked?: Faker::Boolean.boolean)
       end
     end
 

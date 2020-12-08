@@ -32,7 +32,6 @@ RSpec.describe Dealer, type: :model do
       it 'updates time format' do
         medved = Dealer.create!(name: "Medved", city: "Denver", state: "CO", open: true)
 
-        binding.pry
         expect(medved.time_format).to eq(Time.now.strftime('%m/%d/%Y'))
 
         bradley_ford = Dealer.create!(name: "Bradley Ford", city: "LHC", state: "CO", open: true)
