@@ -12,12 +12,12 @@ class RoadsController < ApplicationController
 
   def create
     Road.create({
-      name: params[:road][:name],
-      parking?: params[:road][:parking?],
-      open?: params[:road][:open?],
-      lanes: params[:road][:lanes],
-      date_created: params[:road][:datetime]
-    })
+      name: params[:name],
+      parking?: params[:parking?],
+      open?: params[:open?],
+      lanes: params[:lanes],
+      date_created: params[:datetime]
+      })
     redirect_to '/roads'
   end
 
@@ -28,10 +28,10 @@ class RoadsController < ApplicationController
   def update
     road = Road.find(params[:id])
     road.update({
-      name: params[:road][:name],
-      parking?: params[:road][:parking?],
-      open?: params[:road][:open?],
-      lanes: params[:road][:lanes],
+      name: params[:name],
+      parking?: params[:parking?],
+      open?: params[:open?],
+      lanes: params[:lanes],
     })
     redirect_to "/roads/#{road.id}"
   end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_04_024159) do
+ActiveRecord::Schema.define(version: 2020_12_07_220303) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2020_12_04_024159) do
     t.boolean "driving?"
     t.boolean "parked?"
     t.bigint "road_id"
+    t.datetime "created_at"
     t.index ["road_id"], name: "index_cars_on_road_id"
   end
 
@@ -44,10 +45,10 @@ ActiveRecord::Schema.define(version: 2020_12_04_024159) do
     t.integer "year"
     t.string "make"
     t.string "model"
-    t.integer "dealer_id"
-    t.index ["dealer_id"], name: "index_trucks_at_dealer_id"
+    t.bigint "dealer_id"
+    t.index ["dealer_id"], name: "index_trucks_on_dealer_id"
   end
 
   add_foreign_key "cars", "roads"
-  add_foreign_key "trucks", "dealers", name: "trucks_dealer_id_fkey"
+  add_foreign_key "trucks", "dealers"
 end

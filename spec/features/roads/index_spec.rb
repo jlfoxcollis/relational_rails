@@ -23,7 +23,7 @@ describe 'Roads index page', type: :feature do
 
     expect(page).to have_button('submit')
 
-    fill_in 'road[name]', with: 'THIS IS A ROAD'
+    fill_in 'name', with: 'THIS IS A ROAD'
 
     click_button('submit')
 
@@ -36,7 +36,7 @@ describe 'Roads index page', type: :feature do
   scenario 'creating a road' do
     visit '/roads'
     click_link 'Create a Road'
-    fill_in 'road[name]', with: 'ROAD 1'
+    fill_in 'name', with: 'ROAD 1'
     expect{
       click_button 'submit'
     }.to change(Road, :count).by(1)

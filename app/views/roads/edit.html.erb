@@ -1,21 +1,20 @@
-<form action="/roads/<%= @road.id %>" method="post">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <input type="hidden" name="_method" value="PATCH" />
-  <p>Update Road Name:</p>
-  <input type='text' name='road[name]' value="<%= @road.name %>"/><br/>
-  <p>Lanes:</p>
-  <input type='integer' name='road[lanes]' value="<%= @road.lanes %>"/><br/>
-  <h3>Open?</h3>
-  <input type="radio" id="yes" name='road[open?]'/>
-  <label for="yes">yes</label><br/>
-  <input type="radio" id="no" name='road[open?]' value="false"/>
-  <label for="no">no</label><br/>
-    <h3>Has Parking?</h3>
-  <input type="radio" id="yes" name='road[parking?]' value="true"/>
-  <label for="yes">yes</label><br/>
-  <input type="radio" id="no" name='road[parking?]' value="false"/>
-  <label for="no">no</label><br/>
+<%= form_tag method: :patch do%>
+<%= label_tag 'name'%>
+<%= text_field_tag :name, @road.name %><br><br>
+<%= label_tag 'lanes'%>
+<%= text_field_tag :lanes, @road.lanes%><br><br>
+
+<h3>Open?</h3>
+<%= label_tag("#{@road.open?}") %>
+<%= radio_button_tag('open?', "#{@road.open?}", :checked) %>
+<%= label_tag("#{!@road.open?}") %>
+<%= radio_button_tag('open?', "#{!@road.open?}") %>
+<h3>Has parking?</h3>
+<%= label_tag("#{@road.parking?}") %>
+<%= radio_button_tag('parking?', "#{@road.parking?}", :checked) %>
+<%= label_tag("#{!@road.parking?}") %>
+<%= radio_button_tag('parking?', "#{!@road.parking?}") %><br>
 <div>
-  <%= submit_tag 'update'%>
+  <%= submit_tag "update" %>
 </div>
-</form>
+<% end%>

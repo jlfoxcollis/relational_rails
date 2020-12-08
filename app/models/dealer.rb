@@ -1,7 +1,7 @@
 require 'Time'
 class Dealer < ApplicationRecord
   has_many :trucks, dependent: :destroy
-  scope :sort_trucks, -> { order("trucks ASC") }
+  # scope :sort_trucks, -> { order("trucks ASC") }
 
   def self.date_time_sort
     Dealer.order("open DESC, created_at ASC")

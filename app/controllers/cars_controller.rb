@@ -1,10 +1,10 @@
 class CarsController < ApplicationController
   def index
-    @cars = Car.all
+    @cars = Car.date_time_sort
   end
 
   def parent_index
-    @cars = Car.where(road_id: params[:id])
+    @cars = Car.where(road_id: params[:id]).date_time_sort
   end
   
   def show

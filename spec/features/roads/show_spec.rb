@@ -26,7 +26,7 @@ describe 'Roads show page', type: :feature do
 
     visit "roads/#{main1.id}"
     click_link 'EDIT'
-    fill_in 'road[name]', with: 'MAIN STREET'
+    fill_in 'name', with: 'MAIN STREET'
     click_button 'update'
     expect(page).to have_content("MAIN STREET")
   end
