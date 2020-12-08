@@ -15,7 +15,6 @@ Rails.application.routes.draw do
   #Roads Parent
 
   get '/roads', to: 'roads#index'
-  post '/roads', to: 'roads#index'
   get '/roads/new', to: 'roads#new'
   post '/roads/new', to: 'roads#create'
   get '/roads/:id', to: 'roads#show'
