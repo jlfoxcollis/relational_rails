@@ -1,4 +1,4 @@
-<%= form_tag  do %>
+<%= form_tag "/trucks/#{@truck.id}", method: :patch do %>
 <%= label_tag 'year:' %>
 <%= text_field_tag :year %><br>
 <%= label_tag 'make:' %>

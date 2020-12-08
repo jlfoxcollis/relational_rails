@@ -18,6 +18,8 @@
     <%= form_tag do %>
     <%= label_tag 'Search by keyword:' %>
     <h3><%= text_field_tag "filter", "keyword" %></h3>
+    <%= label_tag 'Exact Match' %>
+    <%= check_box_tag 'exact', 'Exact Match' %>
     <div>
       <%= submit_tag 'filter' %>
     </div>

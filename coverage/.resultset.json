@@ -331,17 +331,17 @@
           null
         ]
       },
-      "/Users/james/turing/mod2/relational_rails/app/helpers/application_helper.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
       "/Users/james/turing/mod2/relational_rails/spec/support/factory_bot.rb": {
         "lines": [
           1,
           null,
           1,
+          1,
+          null
+        ]
+      },
+      "/Users/james/turing/mod2/relational_rails/app/helpers/application_helper.rb": {
+        "lines": [
           1,
           null
         ]
@@ -1065,6 +1065,16 @@
           1,
           null,
           null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
           null
         ]
       },
@@ -1072,6 +1082,24 @@
         "lines": [
           1,
           1,
+          null,
+          1,
+          1,
+          0,
+          1,
+          0,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null,
+          1,
+          0,
+          null,
           null,
           1,
           1,
@@ -1290,10 +1318,14 @@
           1,
           3,
           null,
+          null,
+          1,
+          1,
+          null,
           null
         ]
       }
     },
-    "timestamp": 1607437900
+    "timestamp": 1607454496
   }
 }

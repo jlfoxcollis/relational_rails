@@ -1,19 +1,17 @@
 class TrucksController < ApplicationController
   def index
     if request.post?
-      @trucks = params[:filter].blank? ? Truck.where("year >= ?", params[:orderbyyear]) : Truck.search(params[:filter])
+      @trucks = Truck.sort_and_search(search_params)
     else
       @trucks = Truck.all
     end
   end
 
   def new
-    @dealer = Dealer.find(params[:id])
   end
 
   def create
     truck = Truck.new(truck_params)
-
     truck.save
 
     redirect_to "/dealers/#{truck.dealer_id}/trucks"
@@ -42,5 +40,9 @@ class TrucksController < ApplicationController
 
   def truck_params
     params.permit(:year, :make, :model, :dealer_id)
+  end
+
+  def search_params
+    params.permit(:exact, :filter, :orderbyyear)
   end
 end
