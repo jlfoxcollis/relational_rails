@@ -40,6 +40,5 @@ Rails.application.routes.draw do
   delete '/trucks/:id', to: 'trucks#destroy', as: 'destroy_truck'
 
   get '/dealers/:id/trucks', to: 'trucks_dealer#index', as: 'trucks_dealer'
-  get '/dealers/:id/trucks/:id', to: 'trucks_dealer#show', as: 'show_trucks_dealer'
   get '/roads/:id/cars', to: 'cars_road#index', as: 'cars_road'
 end
