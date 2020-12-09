@@ -55,8 +55,15 @@ RSpec.describe Road, type: :model do
       expect(Road.by_cars).to eq([road2, road3, road1])
     end
 
-    it 'Can arrange cars alphabetically' do
-      
+    
+    it 'Sorts cars by parked?' do
+      pine = Road.create(name: "Pine", open?: false, lanes: 9)
+
+      a = pine.cars.create(name: "Abcd", parked?: true)
+      b = pine.cars.create(name: "Bcde", parked?: false)
+      c = pine.cars.create(name: "Cdef", parked?: true)
+
+      expect(pine.cars_by_parked).to eq([a, c, b])
     end
   end
 end

@@ -57,4 +57,27 @@ describe 'Roads index page', type: :feature do
     expect(page).to have_content("#{elm.name}")
     expect(page).not_to have_content("#{water.name}")
   end
+
+  it 'Can sort roads by cars' do
+    elm = Road.create(name: "Elm", open?: true, lanes: 6)
+    pine = Road.create(name: "Pine", open?: false, lanes: 9)
+
+    5.times do
+      Road.all.each do |road|
+        road.cars.create(name: Faker::Vehicle.make_and_model, parked?: Faker::Boolean.boolean)
+      end
+    end
+
+    pine.cars.create(name: Faker::Vehicle.make_and_model, parked?: Faker::Boolean.boolean)
+
+    visit "/roads"
+
+    expect(page.all('a')[3]).to have_content("#{elm.name}")
+    expect(page.all('a')[4]).to have_content("#{pine.name}")
+
+    click_button 'sort'
+
+    expect(page.all('a')[3]).to have_content("#{pine.name}")
+    expect(page.all('a')[4]).to have_content("#{elm.name}")
+  end
 end

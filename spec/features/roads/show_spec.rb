@@ -43,4 +43,24 @@ describe 'Roads show page', type: :feature do
     expect(page).not_to have_content("Main Street")
     expect(page).to have_content(alley.name)
   end
+
+  it 'Can sort cars alphabetically' do
+    pine = Road.create(name: "Pine", open?: false, lanes: 9)
+
+    a = pine.cars.create(name: "Abcd", parked?: true)
+    b = pine.cars.create(name: "Bcde", parked?: true)
+    c = pine.cars.create(name: "Cdef", parked?: true)
+
+    visit "/roads/#{pine.id}/cars"
+
+    expect(page.all('a')[3]).to have_content("#{c.name}")
+    expect(page.all('a')[4]).to have_content("#{b.name}")
+    expect(page.all('a')[5]).to have_content("#{a.name}")
+
+    click_button 'alphabetize'
+
+    expect(page.all('a')[3]).to have_content("#{a.name}")
+    expect(page.all('a')[4]).to have_content("#{b.name}")
+    expect(page.all('a')[5]).to have_content("#{c.name}")
+  end
 end
