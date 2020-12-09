@@ -37,7 +37,7 @@ RSpec.describe "Dealer index display", type: :feature do
 
     visit "/dealers/#{medved.id}/trucks"
 
-    expect(page).to have_content("Number of Trucks: #{medved.trucks_count}")
+    expect(page).to have_content("Number of Trucks: #{medved.child_count(:trucks)}")
   end
 
   it 'can sort by date' do

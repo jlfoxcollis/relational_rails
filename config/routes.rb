@@ -31,7 +31,7 @@ Rails.application.routes.draw do
   delete '/cars/:id', to: 'cars#destroy'
 
   # Trucks Child Dealer Parent
-  get '/trucks', to: 'trucks#index', as: 'trucks'
+  get '/trucks', to: 'trucks#index', as: 'trucks', as: 'trucks'
   get '/dealers/:id/trucks/new', to: 'trucks#new', as: 'new_truck'
   post '/dealers/:id/trucks', to: 'trucks#create', as: 'create_truck'
   get '/trucks/:id/edit', to: 'trucks#edit', as: 'edit_truck'

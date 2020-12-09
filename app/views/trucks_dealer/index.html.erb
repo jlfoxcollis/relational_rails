@@ -28,7 +28,7 @@
       <%= submit_tag 'search' %>
     </div>
   <% end %>
-  <h2>Number of Trucks: <%= @dealer.trucks_count %></h2>
+  <h2>Number of Trucks: <%= @dealer.child_count(:trucks) %></h2>
 <table>
   <tr>
     <th>View Truck</th>

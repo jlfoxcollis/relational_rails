@@ -44,7 +44,6 @@ class RoadsController < ApplicationController
 
   def destroy
     Road.destroy(params[:id])
-    # someday this will work:  Cars.delete_all(params[:id])
     redirect_to '/roads'
   end
 end

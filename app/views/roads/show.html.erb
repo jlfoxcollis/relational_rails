@@ -8,7 +8,7 @@
 <p>
   <%= form_tag "/roads/#{params[:id]}/cars", method: :get %>
     <%= submit_tag "Cars:" %>
-    <%= label_tag "#{@road.cars_count}" %>
+    <%= label_tag "#{@road.child_count(:cars)}" %>
 </p>
 <h2>Lanes: <%= @road.lanes%></h2>
 <h2>Road Open? <%= @road.open?%><h2>

@@ -41,13 +41,13 @@ RSpec.describe Dealer, type: :model do
       end
     end
 
-    describe '#trucks_count' do
+    describe '#child_count(:trucks)' do
       it 'can count' do
         medved = Dealer.create!(name: "Medved", city: "Denver", state: "CO", open: true)
         bradley_ford = Dealer.create!(name: "Bradley Ford", city: "LHC", state: "CO", open: true)
         medved.trucks.create!(year: 1999, model: "F150", make: "Ford")
 
-        expect(medved.trucks_count).to eq(1)
+        expect(medved.child_count(:trucks)).to eq(1)
       end
     end
 

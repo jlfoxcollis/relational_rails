@@ -14,12 +14,8 @@ class Dealer < ApplicationRecord
     created_at.strftime('%m/%d/%Y')
   end
 
-  def trucks_count
-    trucks.count
-  end
-
   def self.sort_by_trucks_count
-    Dealer.all.sort_by {|dealer| -dealer.trucks_count}
+    Dealer.all.sort_by {|dealer| -dealer.child_count(:trucks)}
   end
 
   def sort_alphabetically

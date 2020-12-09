@@ -1,10 +1,6 @@
 class Road < ApplicationRecord
   has_many :cars, dependent: :destroy
 
-  def cars_count
-    cars.count
-  end
-
   def self.open_sort
     Road.order(open?: :desc)
   end
@@ -14,7 +10,7 @@ class Road < ApplicationRecord
   end
 
   def self.by_cars
-    Road.all.sort_by {|road| -road.cars.count}
+    Road.all.sort_by {|road| -road.child_count(:cars)}
   end
 
   def cars_by_parked

@@ -23,16 +23,6 @@ class DealersController < ApplicationController
       redirect_to '/dealers'
     end
   end
-  # 
-  #
-  # def trucks
-  #   @dealer = Dealer.find(params[:id])
-  #   if request.post?
-  #     @trucks = @dealer.sort_alphabetically
-  #   else
-  #     @trucks = @dealer.trucks
-  #   end
-  # end
 
   def edit
     @dealer = Dealer.find(params[:id]).trucks
