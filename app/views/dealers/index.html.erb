@@ -5,30 +5,32 @@
 
   <body>
     <ul class="navbar">
-      <li><a href="/">Home Page</a></li>
-      <li><a href="/trucks">Trucks Index</a></li>
-      <li><a href="/dealers/new">Add a Dealer</a></li>
+      <li><%= link_to "Home Page", home_path, method: :get %></li>
+      <li><%= link_to "Trucks Index", "/trucks", method: :get %></li>
+      <li><%= link_to "Add a Dealer", new_dealer_path, method: :get %></li>
     </ul>
     <h1 id="mainheader"> All Dealers</h1>
-    <%= form_tag "/dealers", method: :get do %>
-    <div>
-      <%= submit_tag 'Sort Dealers by Trucks count' %>
-    </div>
+    <%= form_tag dealers_path, method: :get do %>
+      <div>
+        <%= submit_tag 'Sort Dealers by Trucks count' %>
+      </div>
     <% end %><br>
     <table style="  border: 1px solid black;">
       <tr>
         <th>Dealer Name</th>
+        <th>Truck Count</th>
         <th>Creation Date</th>
         <th>Edit</th>
         <th>Delete</th>
       </tr>
       <% @dealers.each do |dealer| %>
-      <tr>
-        <td><a href="/dealers/<%= dealer.id %>"><%= dealer.name %></a></td>
-        <td><%= dealer.time_format %></td>
-        <td><a href="/dealers/<%= dealer.id %>/edit">Edit</a></td>
-        <td><%= link_to 'Delete', "/dealers/#{dealer.id}", method: :delete %></td>
-      </tr>
+        <tr>
+          <td><%= link_to dealer.name, show_dealer_path(dealer.id), method: :get %></td>
+          <td><%= "#{dealer.child_count(:trucks)} Trucks" %>
+          <td><%= dealer.time_format %></td>
+          <td><%= link_to "Edit", edit_dealer_path(dealer.id), method: :get %></td>
+          <td><%= link_to 'Delete', destroy_dealer_path(dealer.id), method: :delete %></td>
+        </tr>
       <% end %>
     </table>
   </body>

@@ -1,24 +1,22 @@
 # README
+* Contributors: James Fox-Collis: github.com/jlfoxcollis
+                Max Ribbans: github.com/ribbansmax
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Link back to repo: `https://github.com/jlfoxcollis/relational_rails`
 
-Things you may want to cover:
+* Ruby version: `5.2.4.3`
 
-* Ruby version
+* Database Schema: `https://dbdesigner.page.link/ioSmJ4BoKHfijotU9`
 
-* System dependencies
+* Database creation: `postgresql`
 
-* Configuration
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
+* How to run the test suite: `Testing with rspec.`
 
 * Deployment instructions
 
-* ...
+  First, clone down repo, or Fork for your own use.  Execute `bundle install`
+  To deploy, create database by running: `rails db:migrate`
+  Seed with random values by running: `rails db:seed`
+  Run: `rails s`
+  Navigate to: `http://localhost:3000`

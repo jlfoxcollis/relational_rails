@@ -18,6 +18,8 @@ RSpec.describe "Can see Dealer with attributes", type: :feature do
 
     click_link "Edit"
 
+    click_button 'update'
+
     expect(current_path).to eq("/dealers/#{medved.id}/edit")
     fill_in 'name', with: "MedFord"
 
@@ -29,7 +31,7 @@ RSpec.describe "Can see Dealer with attributes", type: :feature do
   it "can DESTROY" do
     medved = Dealer.create!(name: "Medved", city: "Denver", state: "CO", open: true)
     medved.trucks.create!(year: 1999, model: "Ford", make: "Ford")
-    visit "/dealers/#{medved.id}"
+    visit show_dealer_path(medved.id)
 
     expect(page).to have_link("Delete")
 
@@ -44,7 +46,7 @@ RSpec.describe "Can see Dealer with attributes", type: :feature do
 
     visit "/dealers/#{medved.id}/trucks"
 
-    expect(page).to have_content("Number of Trucks: #{medved.trucks_count}")
+    expect(page).to have_content("Number of Trucks: #{medved.child_count(:trucks)}")
   end
 
   it "can sort by boolean" do

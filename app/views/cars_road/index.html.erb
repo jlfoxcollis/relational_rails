@@ -3,7 +3,7 @@
   <li><a href="/cars">Car Index</a></li>
   <li><a href="/roads">Road Index</a></li>
 </ul>
-<h1>Cars: <%= @cars.first.road.cars_count %></h1>
+<h1>Cars: <%= @cars.first.road.child_count(:cars) %></h1>
 <% @cars.each do |car| %>
 <p>
   <%= form_tag "/cars/#{car.id}/edit", method: :get do %>

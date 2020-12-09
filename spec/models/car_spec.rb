@@ -6,28 +6,12 @@ RSpec.describe Car, type: :model do
   end
 
   it 'Can sort by date time' do
-    FactoryBot.create_list(:road, 1)
-    
-    4.times do
-      Road.all.each do |road|
-        road.cars.create(name: Faker::Vehicle.make_and_model, parked?: Faker::Boolean.boolean)
-      end
-    end
+    pine = Road.create(name: "Pine", open?: false, lanes: 9)
 
-    1.times do
-      Road.all.each do |road|
-        @early = road.cars.create(name: "early", parked?: Faker::Boolean.boolean)
-      end
-    end
+    a = pine.cars.create(name: "Abcd", parked?: true)
+    b = pine.cars.create(name: "Bcde", parked?: true)
+    c = pine.cars.create(name: "Cdef", parked?: true)
 
-    allow(@early).to receive(:created_at) {DateTime.parse("1909-11-05 16:34:45") }
-
-    # don't look here
-    array1 = []
-    Car.date_time_sort.each do |car|
-      array1 << car.name
-    end
-
-    expect(array1.first).to eq("#{@early.name}")
+    expect(pine.cars).to eq([a, b, c])
   end
 end

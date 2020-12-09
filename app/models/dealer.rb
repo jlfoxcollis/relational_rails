@@ -14,15 +14,27 @@ class Dealer < ApplicationRecord
     created_at.strftime('%m/%d/%Y')
   end
 
-  def trucks_count
-    trucks.count
-  end
-
   def self.sort_by_trucks_count
-    Dealer.all.sort_by {|dealer| -dealer.trucks_count}
+    Dealer.all.sort_by {|dealer| -dealer.child_count(:trucks)}
   end
 
   def sort_alphabetically
     trucks.order('LOWER(make) ASC')
+  end
+
+  def partial_search(find)
+    key = "%#{find}%"
+
+    trucks.where("make || model like :search", search: key)
+  end
+
+  def exact_search(find)
+    key = "#{find}"
+
+    trucks.where("make = :finder", finder: key) || Truck.where("make = :finder", finder: key)
+  end
+
+  def search_year(search)
+    trucks.where("year >= ?", search)
   end
 end
