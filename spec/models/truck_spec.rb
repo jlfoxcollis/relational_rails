@@ -14,7 +14,8 @@ RSpec.describe Truck, type: :model do
       truck2 = medved.trucks.create!(year: 1999, model: "F150", make: "Chevy")
       truck3 = medved.trucks.create!(year: 1999, model: "F150", make: "chevy")
 
-      expect(Truck.keyword_search("Ford")).to eq([truck1])
+      expect(Truck.partial_search("For")).to eq([truck1])
+      expect(Truck.exact_search("Chevy")).to eq([truck2])
     end
 
     it 'can limit years integer' do

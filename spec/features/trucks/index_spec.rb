@@ -46,8 +46,8 @@ RSpec.describe 'Test the Monster Trucks!', type: :feature do
 
     visit "/trucks"
 
-    fill_in 'orderbyyear', with: 1995
-    click_on 'sort'
+    fill_in 'search', with: 1995
+    click_on 'search'
     expect(page).not_to have_content("#{truck1.year}")
     expect(page).to have_content("#{truck2.year}")
   end
