@@ -1,83 +1,58 @@
-
 require 'rails_helper'
 
-RSpec.describe 'Test the Monster Trucks!', type: :feature do
-  it 'can display all trucks' do
+RSpec.describe 'it can display stuff', type: :feature do
+  it 'can display trucks and info' do
     bradley_ford = Dealer.create!(name: "Bradley Ford", city: "LHC", state: "CO", open: true)
     medved = Dealer.create!(name: "Medved", city: "Denver", state: "CO", open: true)
     truck2 = medved.trucks.create!(year: 1999, model: "F150", make: "Ford")
     truck1 = medved.trucks.create!(year: 1989, model: "Malibu", make: "Chevy")
 
-    visit trucks_path
+    visit trucks_dealer_path(medved.id)
 
     expect(page).to have_content("#{truck2.make}")
-    expect(page).to have_content("#{truck1.make}")
   end
 
-  it "can show truck attributes" do
+  it 'can search by year' do
+    bradley_ford = Dealer.create!(name: "Bradley Ford", city: "LHC", state: "CO", open: true)
     medved = Dealer.create!(name: "Medved", city: "Denver", state: "CO", open: true)
-    medved.trucks.create!(year: 1999, model: "F150", make: "Ford")
-    visit "/trucks"
-
-    expect(page).to have_content(1999) && have_content("Ford") && have_content("F150")
-  end
-
-  it "can display trucks by dealer" do
-    medved = Dealer.create!(name: "Medved", city: "Denver", state: "CO", open: true)
-    medved.trucks.create!(year: 1999, model: "F150", make: "Ford")
-
-    visit "/dealers/#{medved.id}/trucks/"
-    expect(page).to have_content(1999) && have_content("Ford") && have_content("F150")
-  end
-
-  it "can show a create child and have sad path" do
-    medved = Dealer.create!(name: "Medved", city: "Denver", state: "CO", open: true)
-    medved.trucks.create!(year: 1999, model: "F150", make: "Ford")
+    truck2 = medved.trucks.create!(year: 1999, model: "F150", make: "Ford")
+    truck1 = medved.trucks.create!(year: 1989, model: "Malibu", make: "Chevy")
 
     visit trucks_dealer_path(medved.id)
 
-    expect(page).to have_link("Adopt A Truck")
+    fill_in "search", with: 1990
 
-    click_link "Adopt A Truck"
+    click_on "search"
 
-    click_button 'Create a Truck'
-
-    expect(current_path).to eq("/dealers/#{medved.id}/trucks/new")
-
-    fill_in 'year', with: '1909'
-    fill_in 'make', with: 'ford'
-    fill_in 'model', with: 'F150'
-
-    click_button 'Create a Truck'
-
-    expect(page).to have_content("1909")
+    expect(page).to have_content("#{truck2.make}")
+    expect(page).to_not have_content("#{truck1.make}")
   end
 
-  it "can filter by year and has a sad path" do
+  it 'can have sad path' do
+    bradley_ford = Dealer.create!(name: "Bradley Ford", city: "LHC", state: "CO", open: true)
     medved = Dealer.create!(name: "Medved", city: "Denver", state: "CO", open: true)
     truck2 = medved.trucks.create!(year: 1999, model: "F150", make: "Ford")
-    truck1 = medved.trucks.create!(year: 1989, model: "F150", make: "Ford")
+    truck1 = medved.trucks.create!(year: 1989, model: "Malibu", make: "Chevy")
 
-    visit "/trucks"
+    visit trucks_dealer_path(medved.id)
 
-    click_on 'search'
+    click_on "search"
 
-    fill_in 'search', with: 1995
-    click_on 'search'
-    expect(page).not_to have_content("#{truck1.year}")
-    expect(page).to have_content("#{truck2.year}")
+    expect(current_path).to eq(trucks_dealer_path(medved.id))
   end
 
-  it "can Sort" do
+  it 'can sort' do
+    bradley_ford = Dealer.create!(name: "Bradley Ford", city: "LHC", state: "CO", open: true)
     medved = Dealer.create!(name: "Medved", city: "Denver", state: "CO", open: true)
     truck2 = medved.trucks.create!(year: 1999, model: "F150", make: "Ford")
-    truck1 = medved.trucks.create!(year: 1989, model: "F150", make: "Chevy")
+    truck1 = medved.trucks.create!(year: 1989, model: "Malibu", make: "Chevy")
 
-    visit "/trucks"
+    visit trucks_dealer_path(medved.id)
 
-    click_on 'Sort'
+    click_on "Sort"
+
     expect(page.all('tr')[1]).to have_content("#{truck1.make}")
-    expect(page.all('tr')[3]).to have_content("#{truck2.make}")
+    expect(page.all('tr')[2]).to have_content("#{truck2.make}")
   end
 
   it 'can seach by exact make' do
@@ -86,7 +61,7 @@ RSpec.describe 'Test the Monster Trucks!', type: :feature do
     truck2 = medved.trucks.create!(year: 1999, model: "F150", make: "Ford")
     truck1 = medved.trucks.create!(year: 1989, model: "Malibu", make: "Chevy")
 
-    visit trucks_path
+    visit trucks_dealer_path(medved.id)
 
     fill_in "search", with: "Ford"
 
@@ -103,7 +78,7 @@ RSpec.describe 'Test the Monster Trucks!', type: :feature do
     truck2 = medved.trucks.create!(year: 1999, model: "F150", make: "Ford")
     truck1 = medved.trucks.create!(year: 1989, model: "Malibu", make: "Chevy")
 
-    visit trucks_path
+    visit trucks_dealer_path(medved.id)
 
     fill_in "search", with: "For"
 
@@ -113,5 +88,4 @@ RSpec.describe 'Test the Monster Trucks!', type: :feature do
 
     expect(page.all('tr')[1]).to have_content("#{truck2.make}")
   end
-
 end

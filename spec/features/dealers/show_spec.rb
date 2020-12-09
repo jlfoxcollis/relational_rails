@@ -18,6 +18,8 @@ RSpec.describe "Can see Dealer with attributes", type: :feature do
 
     click_link "Edit"
 
+    click_button 'update'
+
     expect(current_path).to eq("/dealers/#{medved.id}/edit")
     fill_in 'name', with: "MedFord"
 

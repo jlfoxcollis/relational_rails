@@ -27,7 +27,7 @@ class Dealer < ApplicationRecord
   end
 
   def partial_search(find)
-    key = "%#{find[:search]}%"
+    key = "%#{find}%"
 
     trucks.where("make || model like :search", search: key)
   end

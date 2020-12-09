@@ -11,13 +11,15 @@ RSpec.describe "Dealer index display", type: :feature do
     expect(page).to have_content("#{bradley_ford.name}")
   end
 
-  it "can create a new dealer" do
+  it "can create a new dealer and sad path it" do
 
     visit "/dealers"
 
     expect(page).to have_link("Add a Dealer")
 
     click_link "Add a Dealer"
+
+    click_button('create')
 
     expect(page).to have_button('create')
 
@@ -44,5 +46,18 @@ RSpec.describe "Dealer index display", type: :feature do
     allow(bradley_ford).to receive(:created_at) { DateTime.parse("1909-11-05 16:34:45") }
 
     expect(Dealer.update_date_time_sort).to eq([bradley_ford, medved])
+  end
+
+  it 'can sort by truck count' do
+    bradley_ford = Dealer.create!(name: "Bradley Ford", city: "LHC", state: "CO", open: true)
+    medved = Dealer.create!(name: "Medved", city: "Denver", state: "CO", open: true)
+    truck2 = medved.trucks.create!(year: 1999, model: "F150", make: "Ford")
+    truck1 = medved.trucks.create!(year: 1989, model: "Malibu", make: "Chevy")
+
+    visit dealers_path
+
+    click_on 'Sort Dealers by Trucks count'
+    expect(page.all('tr')[1]).to have_content("#{medved.name}")
+    expect(page.all('tr')[2]).to have_content("#{bradley_ford.name}")
   end
 end

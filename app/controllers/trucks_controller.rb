@@ -18,8 +18,6 @@ class TrucksController < ApplicationController
       @trucks = Truck.exact_search(search_params[:search])
     elsif params["radio"] == "Partial"
       @trucks = Truck.partial_search(search_params[:search])
-    else
-      @trucks = Truck.all
     end
   end
 

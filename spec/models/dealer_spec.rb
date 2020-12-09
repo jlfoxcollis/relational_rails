@@ -50,5 +50,63 @@ RSpec.describe Dealer, type: :model do
         expect(medved.trucks_count).to eq(1)
       end
     end
+
+    describe '#date_time_sort' do
+      it 'can sort' do
+        bradley_ford = Dealer.create!(name: "Bradley Ford", city: "LHC", state: "CO", open: false)
+        medved = Dealer.create!(name: "Medved", city: "Denver", state: "CO", open: true)
+        truck2 = medved.trucks.create!(year: 1999, model: "F150", make: "Ford")
+        truck1 = medved.trucks.create!(year: 1989, model: "Malibu", make: "Chevy")
+
+        expect(Dealer.date_time_sort).to eq([medved, bradley_ford])
+      end
+
+      it 'can sort by trucks count' do
+        bradley_ford = Dealer.create!(name: "Bradley Ford", city: "LHC", state: "CO", open: true)
+        medved = Dealer.create!(name: "Medved", city: "Denver", state: "CO", open: true)
+        truck2 = medved.trucks.create!(year: 1999, model: "F150", make: "Ford")
+        truck1 = medved.trucks.create!(year: 1989, model: "Malibu", make: "Chevy")
+
+        expect(Dealer.sort_by_trucks_count).to eq([medved, bradley_ford])
+      end
+
+      it 'can sort alphabetically' do
+        bradley_ford = Dealer.create!(name: "Bradley Ford", city: "LHC", state: "CO", open: true)
+        medved = Dealer.create!(name: "Medved", city: "Denver", state: "CO", open: true)
+        truck2 = medved.trucks.create!(year: 1999, model: "F150", make: "Ford")
+        truck1 = medved.trucks.create!(year: 1989, model: "Malibu", make: "Chevy")
+
+        expect(medved.sort_alphabetically).to eq([truck1, truck2])
+      end
+    end
+
+    describe 'it can search' do
+      it 'can search by year' do
+        bradley_ford = Dealer.create!(name: "Bradley Ford", city: "LHC", state: "CO", open: true)
+        medved = Dealer.create!(name: "Medved", city: "Denver", state: "CO", open: true)
+        truck2 = medved.trucks.create!(year: 1999, model: "F150", make: "Ford")
+        truck1 = medved.trucks.create!(year: 1989, model: "Malibu", make: "Chevy")
+
+        expect(medved.search_year(1990)).to eq([truck2])
+      end
+
+      it 'can search by exact' do
+        bradley_ford = Dealer.create!(name: "Bradley Ford", city: "LHC", state: "CO", open: true)
+        medved = Dealer.create!(name: "Medved", city: "Denver", state: "CO", open: true)
+        truck2 = medved.trucks.create!(year: 1999, model: "F150", make: "Ford")
+        truck1 = medved.trucks.create!(year: 1989, model: "Malibu", make: "Chevy")
+
+        expect(medved.exact_search("Ford")).to eq([truck2])
+      end
+
+      it 'can search by partial' do
+        bradley_ford = Dealer.create!(name: "Bradley Ford", city: "LHC", state: "CO", open: true)
+        medved = Dealer.create!(name: "Medved", city: "Denver", state: "CO", open: true)
+        truck2 = medved.trucks.create!(year: 1999, model: "F150", make: "Ford")
+        truck1 = medved.trucks.create!(year: 1989, model: "Malibu", make: "Chevy")
+
+        expect(medved.partial_search("Chev")).to eq([truck1])
+      end
+    end
   end
 end
