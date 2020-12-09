@@ -12,8 +12,8 @@ RSpec.describe Dealer, type: :model do
     describe '#date_time_sort' do
       it 'returns dealers sorted by creation date' do
         medved = Dealer.create!(name: "Medved", city: "Denver", state: "CO", open: true)
+        sleep(2)
         bradley_ford = Dealer.create!(name: "Bradley Ford", city: "LHC", state: "CO", open: true)
-
         expect(Dealer.date_time_sort).to eq([bradley_ford, medved])
       end
     end

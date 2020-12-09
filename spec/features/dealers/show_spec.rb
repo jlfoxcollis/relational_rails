@@ -29,7 +29,7 @@ RSpec.describe "Can see Dealer with attributes", type: :feature do
   it "can DESTROY" do
     medved = Dealer.create!(name: "Medved", city: "Denver", state: "CO", open: true)
     medved.trucks.create!(year: 1999, model: "Ford", make: "Ford")
-    visit "/dealers/#{medved.id}"
+    visit show_dealer_path(medved.id)
 
     expect(page).to have_link("Delete")
 

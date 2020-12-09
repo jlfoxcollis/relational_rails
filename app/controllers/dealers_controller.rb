@@ -15,9 +15,13 @@ class DealersController < ApplicationController
   end
 
   def create
-    dealer = Dealer.new(dealer_params)
-    dealer.save
-    redirect_to '/dealers'
+    if params[:name] == ""
+      redirect_to "/dealers/new"
+    else
+      dealer = Dealer.new(dealer_params)
+      dealer.save
+      redirect_to '/dealers'
+    end
   end
 
 
@@ -35,14 +39,18 @@ class DealersController < ApplicationController
   end
 
   def update
-    dealer = Dealer.find(params[:id])
-    dealer.update(dealer_params)
-    redirect_to "/dealers/#{dealer.id}"
+    if params[:name] == ""
+      redirect_to edit_dealer_path(params[:id])
+    else
+      dealer = Dealer.find(params[:id])
+      dealer.update(dealer_params)
+      redirect_to show_dealer_path(dealer.id)
+    end
   end
 
   def destroy
     Dealer.destroy(params[:id])
-    redirect_to '/dealers'
+    redirect_to dealers_path
   end
 end
 

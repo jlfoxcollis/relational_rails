@@ -1,17 +1,16 @@
-<%= form_tag "/dealers/#{params[:id]}", method: :patch do  %>
-<%= label_tag 'name:' %>
-<%= text_field_tag :name %><br><br>
-<%= label_tag 'city:' %>
-<%= text_field_tag :city %><br><br>
-<%= label_tag 'state:' %>
-<%= text_field_tag :state %><br><br>
-<h3>Dealer Open?</h3>
-<%= label_tag('yes') %>
-<%= radio_button_tag('open', 'true') %>
-<%= label_tag('no') %>
-<%= radio_button_tag('open', 'false', required: 'required') %>
-<div>
-  <%= submit_tag "update" %>
-</div>
-
+<%= form_tag update_dealer_path(params[:id]), method: :patch do  %>
+  <%= label_tag 'name:' %>
+  <%= text_field_tag :name %><br><br>
+  <%= label_tag 'city:' %>
+  <%= text_field_tag :city %><br><br>
+  <%= label_tag 'state:' %>
+  <%= text_field_tag :state %><br><br>
+  <h3>Dealer Open?</h3>
+  <%= label_tag('yes') %>
+  <%= radio_button_tag('open', 'true') %>
+  <%= label_tag('no') %>
+  <%= radio_button_tag('open', 'false', required: 'required') %>
+  <div>
+    <%= submit_tag "update" %>
+  </div>
 <% end %>

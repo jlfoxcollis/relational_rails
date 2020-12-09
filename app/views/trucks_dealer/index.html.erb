@@ -3,22 +3,30 @@
 </head>
 <body>
   <ul class="navbar">
-    <li><a href="/dealers/<%= @dealer.id %>"> Dealer Page</a></li>
-    <li><a href="/dealers">Dealers Index</a></li>
-    <li><a href="/trucks/">All Trucks Index</a></li>
-    <li><a href="/dealers/<%= @dealer.id %>/trucks/new/?dealer_id=<%= @dealer.id %>">Adopt A Truck</a></li>
+    <li><%= link_to "Dealer Page", show_dealer_path(@dealer.id), method: :get %></li>
+    <li><%= link_to "Dealers Index", dealers_path, method: :get %></li>
+    <li><%= link_to "All Trucks Index", trucks_path, method: :get %></li>
+    <li><%= link_to "Adopt A Truck", new_truck_path(@dealer.id, :dealer_id => @dealer.id), method: :get %></li>
   </ul><br/>
-  <%= form_tag do %>
-  <div>
-    <%= submit_tag 'Sort by make/model' %>
-  </div>
+  <%= form_tag trucks_dealer_path(@dealer.id), method: :get  do %>
+    <%= label_tag 'Sort by make/model?' %>
+    <div>
+      <%= submit_tag 'Sort' %>
+    </div>
+    <h3> OR!</h3>
   <% end %>
-  <%= form_tag do %>
-  <%= label_tag 'Search by keyword:' %>
-  <h3><%= text_field_tag "filter", "keyword" %></h3>
-  <div>
-    <%= submit_tag 'filter' %>
-  </div>
+  <%= form_tag trucks_dealer_path, method: :get do %>
+    <%= label_tag 'Search by year/make/model:' %><br>
+    <%= text_field_tag "search" %><br/><br>
+    <%= label_tag 'Exact:' %>
+    <%= radio_button_tag 'radio', 'Exact Match' %>
+    <%= label_tag 'Partial:' %>
+    <%= radio_button_tag 'radio', 'Partial' %>
+    <%= label_tag 'Year:' %>
+    <%= radio_button_tag 'radio', 'orderbyyear', required: :required %><br><br>
+    <div>
+      <%= submit_tag 'search' %>
+    </div>
   <% end %>
   <h2>Number of Trucks: <%= @dealer.trucks_count %></h2>
 <table>
@@ -27,16 +35,18 @@
     <th>Year</th>
     <th>Make</th>
     <th>Model</th>
-    <th>Dealer ID</th>
+    <th>Edit me?</th>
+
+    <th>Stay or go?</th>
   </tr>
     <% @trucks.each do |truck| %>
     <tr>
-      <td><a href="/trucks/<%= truck.id %>">View</a></td>
+      <td><%= link_to "View", show_truck_path(truck.id), method: :get %></td>
       <td><%= truck.year %></td>
       <td><%= truck.make %></td>
       <td><%= truck.model %></td>
-      <td><%= truck.dealer_id %></td>
-
+      <td><%= link_to "Edit", edit_truck_path(truck.id), method: :get %></td>
+      <td><%= link_to "Delete Truck", destroy_truck_path(truck.id), method: :delete %></td>
     </tr>
     <% end %>
   </table>

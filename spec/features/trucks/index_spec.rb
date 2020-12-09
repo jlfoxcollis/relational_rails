@@ -22,20 +22,20 @@ RSpec.describe 'Test the Monster Trucks!', type: :feature do
     medved = Dealer.create!(name: "Medved", city: "Denver", state: "CO", open: true)
     medved.trucks.create!(year: 1999, model: "F150", make: "Ford")
 
-    visit "/dealers/#{medved.id}/trucks"
+    visit trucks_dealer_path(medved.id)
 
     expect(page).to have_link("Adopt A Truck")
 
     click_link "Adopt A Truck"
 
-    expect(current_path).to eq("/dealers/#{medved.id}/trucks/new/")
+    expect(current_path).to eq("/dealers/#{medved.id}/trucks/new")
 
     fill_in 'year', with: '1909'
     fill_in 'make', with: 'ford'
     fill_in 'model', with: 'F150'
 
     click_button 'Create a Truck'
-    
+
     expect(page).to have_content("1909")
   end
 

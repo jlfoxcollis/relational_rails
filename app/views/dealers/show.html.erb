@@ -4,12 +4,13 @@
 
   <body>
     <ul class="navbar">
-      <li><a href="/">Home Page</a></li>
-      <li><a href="/dealers">Dealers Index</a></li>
-      <li><a href="/trucks/">All Trucks Index</a></li>
-      <li><a href="/dealers/<%= @dealer.id %>/trucks">Trucks</a></li>
-      <li><a href="/dealers/<%= @dealer.id %>/edit">Edit</a></li>
-      <li><a data-method="delete" href="/dealers/<%= @dealer.id %>">Delete</a></li>
+      <li><%= link_to "Home Page", home_path, method: :get %></li>
+      <li><%= link_to "Dealers Index", dealers_path, method: :get %></li>
+      <li><%= link_to "Trucks Index", trucks_path, method: :get %></li>
+      <li><%= link_to "#{@dealer.name} Trucks", trucks_dealer_path, method: :get %></li>
+      <li><%= link_to "Edit", edit_dealer_path(@dealer.id), method: :get %></li>
+      <li><%= link_to "Delete", destroy_dealer_path(@dealer.id), method: :delete %></li>
+
     </ul><br/>
 
     <table>
