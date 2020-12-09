@@ -1,45 +1,46 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  #Dealer Parent
   get '/', to: 'welcome#index'
+  #Dealer Parent
   get '/dealers', to: 'dealers#index'
   get '/dealers/new', to: 'dealers#new'
-  post '/dealers/new', to: 'dealers#create'
+  post '/dealers', to: 'dealers#create'
   get '/dealers/:id', to: 'dealers#show'
   get '/dealers/:id/edit', to: 'dealers#edit'
-  post '/dealers/:id/edit', to: 'dealers#update'
+  patch '/dealers/:id', to: 'dealers#update'
   delete '/dealers/:id', to: 'dealers#destroy'
+
 
   #Roads Parent
 
   get '/roads', to: 'roads#index'
   get '/roads/new', to: 'roads#new'
+  post '/roads/new', to: 'roads#create'
   get '/roads/:id', to: 'roads#show'
-  get '/roads/:id/edit', to: 'roads#edit'
-  post '/roads', to: 'roads#create'
   patch '/roads/:id', to: 'roads#update'
+  get '/roads/:id/edit', to: 'roads#edit'
   delete '/roads/:id', to: 'roads#destroy'
 
   # Cars Child Roads Parent
-
   get '/cars', to: 'cars#index'
-  get '/roads/:id/cars', to: 'cars#parent_index'
   get '/cars/:id', to: 'cars#show'
   get '/roads/:id/cars/new', to: 'cars#new'
-  post '/roads/:id/cars/new', to: 'cars#create'
+  post '/roads/:id/cars', to: 'cars#create'
   get '/cars/:id/edit', to: 'cars#edit'
-  post '/cars/:id/edit', to: 'cars#update'
+  patch '/cars/:id', to: 'cars#update'
   delete '/cars/:id', to: 'cars#destroy'
-
+  
   # Trucks Child Dealer Parent
   get '/trucks', to: 'trucks#index'
-  get '/dealers/:id/trucks', to: 'dealers#trucks'
-  get '/trucks/:id', to: 'trucks#show'
+  post '/trucks', to: 'trucks#index'
   get '/dealers/:id/trucks/new', to: 'trucks#new'
-  post '/dealers/:id/trucks/new', to: 'trucks#create'
+  post '/dealers/:id/trucks', to: 'trucks#create'
   get '/trucks/:id/edit', to: 'trucks#edit'
+  patch '/trucks/:id', to: 'trucks#update'
+  get '/trucks/:id', to: 'trucks#show'
   get '/dealers/:id/trucks/:id', to: 'trucks#show'
-  post '/dealers/:id/trucks/:id/edit', to: 'trucks#update'
-  get '/dealers/:id/trucks/:id/edit', to: 'trucks#edit'
   delete '/trucks/:id', to: 'trucks#destroy'
+  
+  get '/dealers/:id/trucks', to: 'trucks_dealer#index'
+  get '/roads/:id/cars', to: 'cars_road#index'
 end

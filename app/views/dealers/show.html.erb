@@ -1,44 +1,12 @@
 <html>
   <head>
-    <style>
-      table, th, td {
-        border: 1px solid black;
-        text-align: left;
-        padding: 5px;
-      }
-
-      th {
-        font-weight: 900;
-      }
-      .navbar {
-  list-style-type: none;
-  color:black;
-  margin: 0;
-  padding: 5;
-  overflow: hidden;
-  background-color: #ffffff;
-}
-li {
-  float: left;
-  font-size: 1.2em;
-  word-spacing: 5px;
-}
-
-li a {
-  display: block;
-  color: black;
-  padding: 5px;
-}
-
-li a:hover {
-  background-color: red;
-}
-    </style>
   </head>
 
   <body>
     <ul class="navbar">
+      <li><a href="/">Home Page</a></li>
       <li><a href="/dealers">Dealers Index</a></li>
+      <li><a href="/trucks/">All Trucks Index</a></li>
       <li><a href="/dealers/<%= @dealer.id %>/trucks">Trucks</a></li>
       <li><a href="/dealers/<%= @dealer.id %>/edit">Edit</a></li>
       <li><a data-method="delete" href="/dealers/<%= @dealer.id %>">Delete</a></li>
@@ -51,12 +19,12 @@ li a:hover {
         <th>Founded</th>
         <th>Open?</th>
       </tr>
-    <tr>
-    <td><%= @dealer.name %></td>
-    <td><%= @dealer.city + ", " + @dealer.state %></td>
-    <td><%= @dealer.created_at %></td>
-    <td><%= @dealer.open %></td>
-    </tr>
+      <tr>
+        <td><%= @dealer.name %></td>
+        <td><%= @dealer.city + ", " + @dealer.state %></td>
+        <td><%= @dealer.created_at %></td>
+        <td><%= @dealer.open %></td>
+      </tr>
     </table>
   </body>
 </html>

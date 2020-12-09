@@ -1,6 +1,19 @@
+<ul class="navbar">
+  <li><a href="/">Home Page</a></li>
+  <li><a href="/cars">Car Index</a></li>
+  <li><a href="/roads">Road Index</a></li>
+</ul>
 <h1>Cars:</h1>
 <% @cars.each do |car| %>
-<p><a href='/cars/<%= car.id %>'><%= car.name %></a></p>
-<p><%= car.driving?%></p>
-<p><%= car.parked?%></p>
+<p>
+  <%= form_tag "/cars/#{car.id}/edit", method: :get do %>
+    <%= submit_tag 'edit' %>
+  <a href='/cars/<%= car.id %>'><%= car.name %></a>
+  <% end %>
+  <%= form_tag "/cars/#{car.id}", method: :delete do%>
+    <%= submit_tag 'delete' %>
+  <% end %>
+</p>
+<p>Is parked? <%= car.parked?%></p>
+<h5>Entered <%= car.road.name %> on: <%= car.created_at.strftime("%m/%d/%Y")%></h5>
 <% end%>

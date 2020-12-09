@@ -1,8 +1,13 @@
+<ul class="navbar">
+  <li><a href="/">Home Page</a></li>
+  <li><a href="/cars">Car Index</a></li>
+  <li><a href="/roads">Road Index</a></li>
+</ul>
 <h1>Car:</h1>
-<p><%= @car.name %></p>
-<p><%= @car.driving?%></p>
-<p><%= @car.parked?%></p>
-<h2>Is currently in: <h4><a href="/roads/<%= @car.road.id %>/cars"><%= @car.road.name%></a><h4></h2>
+<p>Name: <%= @car.name %></p>
+<p>Is parked? <%= @car.parked?%></p>
+<h2>Is currently in: <h4><a href="/roads/<%= @car.road.id %>"><%= @car.road.name%></a><h4></h2>
+<h5>Entered road on: <%= @car.created_at.strftime("%m/%d/%Y")%></h5>
 <h4><a href="/cars/<%= @car.id %>/edit">edit</a></h4>
 <h4><a data-method='delete' href="/cars/<%= @car.id %>">delete</a></h4>
 <h4><a href="/cars">Car Index</a><h4>

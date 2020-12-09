@@ -1,12 +1,7 @@
-<%= form_tag do  %>
+<%= form_tag "/roads/#{params[:id]}/cars/", method: :post do  %>
 <%= hidden_field_tag :road_id, params[:id] %>
 <%= label_tag 'Car name:' %>
 <%= text_field_tag :name %><br><br>
-<h3>Driving?</h3>
-<%= label_tag('yes') %>
-<%= radio_button_tag('driving?', 'true') %>
-<%= label_tag('no') %>
-<%= radio_button_tag('driving?', 'false', required: 'required') %>
 <h3>Parked?</h3>
 <%= label_tag('yes') %>
 <%= radio_button_tag('parked?', 'true') %>

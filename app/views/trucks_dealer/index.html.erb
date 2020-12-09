@@ -1,0 +1,44 @@
+<html>
+<head>
+</head>
+<body>
+  <ul class="navbar">
+    <li><a href="/dealers/<%= @dealer.id %>"> Dealer Page</a></li>
+    <li><a href="/dealers">Dealers Index</a></li>
+    <li><a href="/trucks/">All Trucks Index</a></li>
+    <li><a href="/dealers/<%= @dealer.id %>/trucks/new/?dealer_id=<%= @dealer.id %>">Adopt A Truck</a></li>
+  </ul><br/>
+  <%= form_tag do %>
+  <div>
+    <%= submit_tag 'Sort by make/model' %>
+  </div>
+  <% end %>
+  <%= form_tag do %>
+  <%= label_tag 'Search by keyword:' %>
+  <h3><%= text_field_tag "filter", "keyword" %></h3>
+  <div>
+    <%= submit_tag 'filter' %>
+  </div>
+  <% end %>
+  <h2>Number of Trucks: <%= @dealer.trucks_count %></h2>
+<table>
+  <tr>
+    <th>View Truck</th>
+    <th>Year</th>
+    <th>Make</th>
+    <th>Model</th>
+    <th>Dealer ID</th>
+  </tr>
+    <% @trucks.each do |truck| %>
+    <tr>
+      <td><a href="/trucks/<%= truck.id %>">View</a></td>
+      <td><%= truck.year %></td>
+      <td><%= truck.make %></td>
+      <td><%= truck.model %></td>
+      <td><%= truck.dealer_id %></td>
+
+    </tr>
+    <% end %>
+  </table>
+</body>
+</html>

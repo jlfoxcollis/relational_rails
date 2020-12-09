@@ -1,11 +1,6 @@
-<%= form_tag(method: :patch) do%>
+<%= form_tag "/cars/#{params[:id]}", method: :patch do%>
 <%= label_tag 'name'%>
 <%= text_field_tag :name, @car.name %><br><br>
-<h3>Driving?</h3>
-<%= label_tag("#{@car.driving?}") %>
-<%= radio_button_tag('driving?', "#{@car.driving?}", :checked) %>
-<%= label_tag("#{!@car.driving?}") %>
-<%= radio_button_tag('driving?', "#{!@car.driving?}") %>
 <h3>Parked?</h3>
 <%= label_tag("#{@car.parked?}") %>
 <%= radio_button_tag('parked?', "#{@car.parked?}", :checked) %>

@@ -37,5 +37,25 @@ RSpec.describe "Can see Dealer with attributes", type: :feature do
     expect(current_path).to eq("/dealers")
   end
 
+  it "can display child count" do
+    medved = Dealer.create!(name: "Medved", city: "Denver", state: "CO", open: false)
+    bradley_ford = Dealer.create!(name: "Bradley Ford", city: "LHC", state: "CO", open: true)
+    medved.trucks.create!(year: 1999, model: "F150", make: "Ford")
+
+    visit "/dealers/#{medved.id}/trucks"
+
+    expect(page).to have_content("Number of Trucks: #{medved.trucks_count}")
+  end
+
+  it "can sort by boolean" do
+    medved = Dealer.create!(name: "Medved", city: "Denver", state: "CO", open: false)
+    bradley_ford = Dealer.create!(name: "Bradley Ford", city: "LHC", state: "CO", open: true)
+    medved.trucks.create!(year: 1999, model: "F150", make: "Ford")
+
+    visit "/dealers/#{medved.id}"
+
+    expect(Dealer.date_time_sort).to eq([bradley_ford, medved])
+  end
+
 
 end

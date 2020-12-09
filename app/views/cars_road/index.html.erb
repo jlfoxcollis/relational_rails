@@ -1,0 +1,25 @@
+<ul class="navbar">
+  <li><a href="/">Home Page</a></li>
+  <li><a href="/cars">Car Index</a></li>
+  <li><a href="/roads">Road Index</a></li>
+</ul>
+<h1>Cars: <%= @cars.first.road.cars_count %></h1>
+<% @cars.each do |car| %>
+<p>
+  <%= form_tag "/cars/#{car.id}/edit", method: :get do %>
+    <%= submit_tag 'edit' %>
+  <a href='/cars/<%= car.id %>'><%= car.name %></a>
+  <% end %>
+  <%= form_tag "/cars/#{car.id}", method: :delete do%>
+    <%= submit_tag 'delete' %>
+  <% end %>
+</p>
+<p>Is parked? <%= car.parked?%></p>
+<% end%>
+<%= form_tag "/roads/#{@cars.first.road_id}/cars", method: :get do %>
+  <%= label_tag 'Alphabetize cars' %>
+  <div>
+    <%= submit_tag 'alphabetize', sort: true %>
+  </div>
+<% end %>
+<h3><a href="/roads/<%= @cars.first.road.id %>/cars/new">Adopt Car</a></h3>

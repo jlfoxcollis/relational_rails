@@ -1,6 +1,14 @@
 class RoadsController < ApplicationController
   def index
-    @roads = Road.all
+    @num_cars = false
+    if params["commit"] == "sort"
+      @roads = Road.by_cars
+      @num_cars = true
+    elsif params["commit"] == "filter"
+      @roads = Road.more_lanes_than(params["lane filter"])
+    else
+      @roads = Road.all
+    end
   end
 
   def show
@@ -12,12 +20,11 @@ class RoadsController < ApplicationController
 
   def create
     Road.create({
-      name: params[:road][:name],
-      parking?: params[:road][:parking?],
-      open?: params[:road][:open?],
-      lanes: params[:road][:lanes],
-      date_created: params[:road][:datetime]
-    })
+      name: params[:name],
+      open?: params[:open?],
+      lanes: params[:lanes],
+      date_created: params[:datetime]
+      })
     redirect_to '/roads'
   end
 
@@ -28,10 +35,9 @@ class RoadsController < ApplicationController
   def update
     road = Road.find(params[:id])
     road.update({
-      name: params[:road][:name],
-      parking?: params[:road][:parking?],
-      open?: params[:road][:open?],
-      lanes: params[:road][:lanes],
+      name: params[:name],
+      open?: params[:open?],
+      lanes: params[:lanes],
     })
     redirect_to "/roads/#{road.id}"
   end

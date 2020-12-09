@@ -1,11 +1,11 @@
 require 'rails_helper'
 
 describe 'Can make a new car', type: :feature do
-  
+
   it 'Form something' do
-    main1 = Road.create!(name: "Main Street", lanes: 2, parking?: true, open?: false)
-    mini = main1.cars.create!(name: "Tom's mini", driving?: false, parked?: true)
-    honda = main1.cars.create!(name: "Buddy", driving?: true, parked?: false)
+    main1 = Road.create!(name: "Main Street", lanes: 2, open?: false)
+    mini = main1.cars.create!(name: "Tom's mini", parked?: true)
+    honda = main1.cars.create!(name: "Buddy", parked?: false)
 
     visit "/roads/#{mini.road.id}/cars/new"
 
@@ -18,7 +18,7 @@ describe 'Can make a new car', type: :feature do
   end
 
   it 'Catches unnamed Car' do
-    main1 = Road.create!(name: "Main Street", lanes: 2, parking?: true, open?: false)
+    main1 = Road.create!(name: "Main Street", lanes: 2, open?: false)
 
     visit "roads/#{main1.id}/cars/new"
 

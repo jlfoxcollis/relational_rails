@@ -1,6 +1,35 @@
+<ul class="navbar">
+  <li><a href="/">Home Page</a></li>
+  <li><a href="/cars">Car Index</a></li>
+  <li><a href="/roads">Road Index</a></li>
+</ul>
 <h1>Roads:</h1>
 <% @roads.each do |road| %>
-<p><a href='/roads/<%= road.id %>'><%= road.name %></a></p>
+<p>
+  <%= form_tag "/roads/#{road.id}/edit", method: :get do %>
+    <%= submit_tag 'edit' %>
+    <a href='/roads/<%= road.id %>'><%= road.name %></a>
+    <% if @num_cars%>
+      <%= "Number of cars on road: #{road.cars_count}"%>
+    <% end %>
+  <% end %>
+  <%= form_tag "/roads/#{road.id}", method: :delete do%>
+    <%= submit_tag 'delete' %>
+  <% end %>
+</p>
 <% end%>
 
+<%= form_tag "/roads", method: :get do %>
+  <%= label_tag 'Filter more lanes than:' %>
+  <h3><%= text_field_tag "lane filter", "2" %></h3>
+  <div>
+    <%= submit_tag 'filter' %>
+  </div>
+<% end %>
 <h3><a href='/roads/new'>Create a Road</a></h3>
+<%= form_tag "/roads", method: :get do %>
+  <%= label_tag 'Sort by cars on road' %>
+  <div>
+    <%= submit_tag 'sort', sort: true %>
+  </div>
+<% end %>

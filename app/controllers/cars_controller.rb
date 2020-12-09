@@ -1,10 +1,6 @@
 class CarsController < ApplicationController
   def index
-    @cars = Car.all
-  end
-
-  def parent_index
-    @cars = Car.where(road_id: params[:id])
+    @cars = Car.date_time_sort
   end
   
   def show
@@ -20,7 +16,6 @@ class CarsController < ApplicationController
     else
       Car.create({
         name: params[:name],
-        driving?: params[:driving?],
         parked?: params[:parked?],
         road_id: params[:road_id]
       })
@@ -39,7 +34,6 @@ class CarsController < ApplicationController
     else
       car.update({
         name: params[:name],
-        driving?: params[:driving?],
         parked?: params[:parked?]
       })
       redirect_to "/cars/#{car.id}"

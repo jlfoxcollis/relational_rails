@@ -1,8 +1,17 @@
+<ul class="navbar">
+  <li><a href="/">Home Page</a></li>
+  <li><a href="/cars">Car Index</a></li>
+  <li><a href="/roads">Road Index</a></li>
+</ul>
 <a href='/roads'>Back</a>
 <h1><%= @road.name%></h1>
+<p>
+  <%= form_tag "/roads/#{params[:id]}/cars", method: :get %>
+    <%= submit_tag "Cars:" %>
+    <%= label_tag "#{@road.cars_count}" %>
+</p>
 <h2>Lanes: <%= @road.lanes%></h2>
 <h2>Road Open? <%= @road.open?%><h2>
-<h2>Parking? <%= @road.parking?%><h2>
 <ul class="navbar">
   <li><a href='/roads/<%= @road.id %>/edit'>EDIT</a></li>
   <li><a data-method="delete" href='/roads/<%= @road.id %>'>DELETE</a></li>

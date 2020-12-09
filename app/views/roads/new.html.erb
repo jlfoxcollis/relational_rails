@@ -1,20 +1,15 @@
-<form action="/roads" method="post">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <p>Enter a new Road:</p>
-  <input type='text' name='road[name]'/><br/>
-  <p>Lanes:</p>
-  <input type='integer' name='road[lanes]'/><br/>
-  <h3>Open?</h3>
-  <input type="radio" id="yes" name='road[open?]' value="true"/>
-  <label for="yes">yes</label><br/>
-  <input type="radio" id="no" name='road[open?]' value="false"/>
-  <label for="no">no</label><br/>
-    <h3>Has Parking?</h3>
-  <input type="radio" id="yes" name='road[parking?]' value="true"/>
-  <label for="yes">yes</label><br/>
-  <input type="radio" id="no" name='road[parking?]' value="false"/>
-  <label for="no">no</label><br/>
-  <div>
+<%= form_tag method: :post do%>
+<%= label_tag 'name'%>
+<%= text_field_tag :name %><br><br>
+<%= label_tag 'lanes'%>
+<%= text_field_tag :lanes%><br><br>
+
+<h3>Open?</h3>
+<%= label_tag("true") %>
+<%= radio_button_tag('open?', 'true', required: "required") %>
+<%= label_tag("false") %>
+<%= radio_button_tag('open?', 'false') %>
+<div>
   <%= submit_tag "submit" %>
-  </div>
-</form>
+</div>
+<% end%>

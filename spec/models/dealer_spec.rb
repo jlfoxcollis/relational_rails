@@ -1,6 +1,6 @@
+
 require 'Time'
 require 'date'
-
 require 'rails_helper'
 
 RSpec.describe Dealer, type: :model do
@@ -14,7 +14,7 @@ RSpec.describe Dealer, type: :model do
         medved = Dealer.create!(name: "Medved", city: "Denver", state: "CO", open: true)
         bradley_ford = Dealer.create!(name: "Bradley Ford", city: "LHC", state: "CO", open: true)
 
-        expect(Dealer.date_time_sort).to eq([medved, bradley_ford])
+        expect(Dealer.date_time_sort).to eq([bradley_ford, medved])
       end
     end
 

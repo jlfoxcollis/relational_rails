@@ -1,23 +1,19 @@
 class TrucksController < ApplicationController
   def index
-    @trucks = Truck.all
+    if request.post?
+      @trucks = Truck.sort_and_search(search_params)
+    else
+      @trucks = Truck.all
+    end
   end
 
   def new
-    @dealer = Dealer.find(params[:id])
   end
 
   def create
-    truck = Truck.new({
-      year: params[:year],
-      make: params[:make],
-      model: params[:model],
-      dealer_id: params[:dealer_id]
-    })
-
+    truck = Truck.new(truck_params)
     truck.save
-
-    redirect_to "/dealers/#{truck.dealer_id}/trucks"
+    redirect_to "/dealers/#{params[:dealer_id]}/trucks"
   end
 
   def show
@@ -30,17 +26,22 @@ class TrucksController < ApplicationController
 
   def update
     truck = Truck.find(params[:id])
-    truck.update({
-      year: params[:year],
-      make: params[:make],
-      model: params[:model],
-      dealer_id: params[:dealer_id]
-    })
-    redirect_to "/dealers/#{truck.dealer_id}/trucks/#{truck.id}"
+    truck.update!(truck_params)
+    redirect_to "/trucks/#{truck.id}"
   end
 
   def destroy
     Truck.destroy(params[:id])
     redirect_to "/trucks"
+  end
+
+  private
+
+  def truck_params
+    params.permit(:year, :make, :model, :dealer_id)
+  end
+
+  def search_params
+    params.permit(:exact, :filter, :orderbyyear)
   end
 end

@@ -1,10 +1,10 @@
 require 'rails_helper'
 
 describe 'Roads index page', type: :feature do
-  
+
   it 'Can Display Info' do
-    main = Road.create!(name: "Main Street", lanes: 2, parking?: true, open?: true)
-    alley = Road.create!(name: "Alley 617", lanes: 0, parking?: true, open?: false)
+    main = Road.create!(name: "Main Street", lanes: 2, open?: true)
+    alley = Road.create!(name: "Alley 617", lanes: 0, open?: false)
 
     visit '/roads'
 
@@ -13,8 +13,8 @@ describe 'Roads index page', type: :feature do
   end
 
   it 'Can link to new road', type: :feature do
-    main = Road.create!(name: "Main Street", lanes: 2, parking?: true, open?: true)
-    
+    main = Road.create!(name: "Main Street", lanes: 2, open?: true)
+
     visit '/roads'
 
     expect(page).to have_link("Create a Road", href: '/roads/new')
@@ -23,7 +23,7 @@ describe 'Roads index page', type: :feature do
 
     expect(page).to have_button('submit')
 
-    fill_in 'road[name]', with: 'THIS IS A ROAD'
+    fill_in 'name', with: 'THIS IS A ROAD'
 
     click_button('submit')
 
@@ -36,9 +36,25 @@ describe 'Roads index page', type: :feature do
   scenario 'creating a road' do
     visit '/roads'
     click_link 'Create a Road'
-    fill_in 'road[name]', with: 'ROAD 1'
+    fill_in 'name', with: 'ROAD 1'
     expect{
       click_button 'submit'
     }.to change(Road, :count).by(1)
+  end
+
+  it 'Can display a portion of roads by lanes' do
+    pine = Road.create(name: "Pine", open?: false, lanes: 9)
+    elm = Road.create(name: "Elm", open?: true, lanes: 6)
+    water = Road.create(name: "Water", open?: false, lanes: 1)
+
+    visit '/roads'
+
+    fill_in 'lane filter', with: "#{water.lanes}"
+
+    click_button 'filter'
+
+    expect(page).to have_content("#{pine.name}")
+    expect(page).to have_content("#{elm.name}")
+    expect(page).not_to have_content("#{water.name}")
   end
 end
