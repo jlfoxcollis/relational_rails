@@ -19,7 +19,7 @@ Link back to repo: `https://github.com/jlfoxcollis/relational_rails`
 
 * Database initialization
 
-* How to run the test suite: Testing with rspec.
+* How to run the test suite: `Testing with rspec.`
 
 * Services (job queues, cache servers, search engines, etc.)
 
