@@ -26,6 +26,7 @@ class DealersController < ApplicationController
 
   def edit
     @dealer = Dealer.find(params[:id]).trucks
+    render "/dealers/edit.html.erb"
   end
 
   def update

@@ -49,6 +49,8 @@ describe 'Roads index page', type: :feature do
 
     visit '/roads'
 
+    expect(page).to have_content("#{water.name}")
+
     fill_in 'lane filter', with: "#{water.lanes}"
 
     click_button 'filter'
